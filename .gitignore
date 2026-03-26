@@ -25,6 +25,19 @@ yarn-error.log*
 # vercel
 .vercel
 
+# Claude Code local state
+.claude/
+
+# Raw DZS Excel files (too large for Git)
+data-processing/raw/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
 # IDE
 .vscode/
 .idea/

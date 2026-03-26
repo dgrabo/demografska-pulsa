@@ -11,44 +11,20 @@
   width: 100%;
 }
 
-.title {
-  font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  line-height: 1.15;
+.pageTitle {
+  font-size: 1.6rem;
+  font-weight: 700;
   color: var(--color-text);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
-.accent {
-  color: var(--color-primary);
-}
-
-.subtitle {
-  font-size: 1.1rem;
+.pageSubtitle {
+  font-size: 0.9rem;
   color: var(--color-muted);
-  max-width: 600px;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
 }
 
-.ctaButton {
-  display: inline-block;
-  padding: 10px 24px;
-  background: var(--color-primary);
-  color: #fff;
-  font-size: 0.92rem;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  margin-bottom: 28px;
-  transition: background 0.2s ease;
-}
-
-.ctaButton:hover {
-  background: #c93c3b;
-}
-
-.statsGrid {
+.statsRow {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
@@ -75,7 +51,7 @@
 }
 
 @media (max-width: 900px) {
-  .statsGrid {
+  .statsRow {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -85,25 +61,21 @@
     padding: 20px 16px 32px;
   }
 
-  .title {
-    font-size: 1.75rem;
-  }
-
-  .subtitle {
-    font-size: 1rem;
-  }
-
   .mapLayout {
     grid-template-columns: 1fr;
   }
 
-  .statsGrid {
+  .statsRow {
     gap: 8px;
+  }
+
+  .pageTitle {
+    font-size: 1.3rem;
   }
 }
 
 @media (max-width: 480px) {
-  .statsGrid {
+  .statsRow {
     grid-template-columns: 1fr 1fr;
   }
 }

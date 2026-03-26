@@ -1,4 +1,23 @@
-// Placeholder — will be implemented in Step 3
-export default function MapWrapper() {
-  return <div style={{ padding: 40, textAlign: 'center', color: '#6b6b66' }}>Karta — korak 3</div>;
+'use client';
+
+import dynamic from 'next/dynamic';
+import styles from './Map.module.css';
+
+const CroatiaMap = dynamic(() => import('./CroatiaMap'), {
+  ssr: false,
+  loading: () => (
+    <div className={styles.loadingPlaceholder}>
+      Učitavanje karte...
+    </div>
+  ),
+});
+
+export default function MapWrapper({ zupanije, selectedCountyId, onSelectCounty }) {
+  return (
+    <CroatiaMap
+      zupanije={zupanije}
+      selectedCountyId={selectedCountyId}
+      onSelectCounty={onSelectCounty}
+    />
+  );
 }

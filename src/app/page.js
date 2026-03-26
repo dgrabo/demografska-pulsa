@@ -1,7 +1,18 @@
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
 import Header from '@/components/Layout/Header';
 import StatCard from '@/components/StatCard/StatCard';
-import styles from './page.module.css';
+import MapWrapper from '@/components/Map/MapWrapper';
+import CountyPanel from '@/components/CountyPanel/CountyPanel';
+import TrendChart from '@/components/Charts/TrendChart';
+import PyramidChart from '@/components/Charts/PyramidChart';
+import chartStyles from '@/components/Charts/Charts.module.css';
+import OpcineList from '@/components/OpcineList/OpcineList';
 import zupanije from '../../public/data/zupanije.json';
+import opcine from '../../public/data/opcine.json';
+import styles from './page.module.css';
 
 // Compute national totals from county data
 const ukupno2021 = zupanije.reduce((s, z) => s + z.stanovnistvo_2021, 0);
@@ -22,17 +33,28 @@ function formatNum(n) {
 }
 
 export default function Home() {
+  const [selectedCountyId, setSelectedCountyId] = useState(null);
+  const [showOpcine, setShowOpcine] = useState(false);
+
+  const selectedCounty = selectedCountyId
+    ? zupanije.find((z) => z.id === selectedCountyId)
+    : null;
+
   return (
     <div className={styles.page}>
       <Header />
-      <main className={styles.hero}>
+      <main className={styles.main}>
         <h1 className={styles.title}>
           Demografska<span className={styles.accent}>Pulsa</span>
         </h1>
         <p className={styles.subtitle}>
           Interaktivna vizualizacija demografskih podataka Republike Hrvatske.
-          Popis stanovništva 2021., trendovi i projekcije.
+          Kliknite na županiju za detaljne podatke.
         </p>
+
+        <Link href="/projekcije" className={styles.ctaButton}>
+          Projekcije do 2050.
+        </Link>
 
         <div className={styles.statsGrid}>
           <StatCard
@@ -58,6 +80,36 @@ export default function Home() {
             description="Mlado stanovništvo (0 do 14 godina)"
           />
         </div>
+
+        <div className={styles.mapLayout}>
+          <MapWrapper
+            zupanije={zupanije}
+            selectedCountyId={selectedCountyId}
+            onSelectCounty={setSelectedCountyId}
+          />
+          <CountyPanel
+            county={selectedCounty}
+            onClose={() => setSelectedCountyId(null)}
+            onViewMunicipalities={selectedCounty ? () => setShowOpcine(true) : undefined}
+          />
+        </div>
+
+        <section className={chartStyles.chartsSection}>
+          <h2 className={chartStyles.chartsSectionTitle}>Trendovi i struktura</h2>
+          <div className={chartStyles.chartsGrid}>
+            <TrendChart />
+            <PyramidChart />
+          </div>
+        </section>
+
+        {showOpcine && selectedCounty && (
+          <OpcineList
+            countyId={selectedCounty.id}
+            countyName={selectedCounty.naziv}
+            opcine={opcine}
+            onClose={() => setShowOpcine(false)}
+          />
+        )}
 
         <p className={styles.source}>
           Izvor: Državni zavod za statistiku, Popis stanovništva 2021. &middot; CC BY 4.0

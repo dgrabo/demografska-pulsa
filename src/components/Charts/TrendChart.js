@@ -14,7 +14,7 @@ import {
 import annotationPlugin from 'chartjs-plugin-annotation';
 import trendData from '../../../public/data/trend.json';
 import styles from './Charts.module.css';
-import { correctBorderRadius } from 'framer-motion';
+
 
 ChartJS.register(
   CategoryScale,

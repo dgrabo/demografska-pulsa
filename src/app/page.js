@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import { motion } from 'framer-motion';
 import Header from '@/components/Layout/Header';
 import StatCard from '@/components/StatCard/StatCard';
 import MapWrapper from '@/components/Map/MapWrapper';
@@ -32,6 +32,31 @@ function formatNum(n) {
   return n.toLocaleString('hr-HR');
 }
 
+const statCards = [
+  {
+    label: 'Stanovništvo 2021.',
+    value: formatNum(ukupno2021),
+    description: 'Prema Popisu stanovništva 2021.',
+  },
+  {
+    label: 'Pad od 2011.',
+    value: `${formatNum(padApsolutni)} (${padPostotak}%)`,
+    description: 'Apsolutni i relativni pad u 10 godina',
+    negative: true,
+  },
+  {
+    label: 'Udio 65+',
+    value: `${udio65}%`,
+    description: 'Starije stanovništvo (65 i više godina)',
+    negative: true,
+  },
+  {
+    label: 'Udio 0–14',
+    value: `${udio014}%`,
+    description: 'Mlado stanovništvo (0 do 14 godina)',
+  },
+];
+
 export default function Home() {
   const [selectedCountyId, setSelectedCountyId] = useState(null);
   const [showOpcine, setShowOpcine] = useState(false);
@@ -44,41 +69,42 @@ export default function Home() {
     <div className={styles.page}>
       <Header />
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Demografska<span className={styles.accent}>Pulsa</span>
-        </h1>
-        <p className={styles.subtitle}>
-          Interaktivna vizualizacija demografskih podataka Republike Hrvatske.
-          Kliknite na županiju za detaljne podatke.
-        </p>
-
-        <Link href="/projekcije" className={styles.ctaButton}>
-          Projekcije do 2050.
-        </Link>
+        <section className={styles.hero}>
+          <motion.h1
+            className={styles.heroTitle}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            Hrvatska nestaje.{' '}
+            <span className={styles.accent}>Pogledaj koliko brzo.</span>
+          </motion.h1>
+          <motion.p
+            className={styles.heroSubtitle}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+          >
+            413.000 manje Hrvata u 10 godina. Svaka županija bilježi pad.
+          </motion.p>
+        </section>
 
         <div className={styles.statsGrid}>
-          <StatCard
-            label="Stanovništvo 2021."
-            value={formatNum(ukupno2021)}
-            description="Prema Popisu stanovništva 2021."
-          />
-          <StatCard
-            label="Pad od 2011."
-            value={`${formatNum(padApsolutni)} (${padPostotak}%)`}
-            description="Apsolutni i relativni pad u 10 godina"
-            negative
-          />
-          <StatCard
-            label="Udio 65+"
-            value={`${udio65}%`}
-            description="Starije stanovništvo (65 i više godina)"
-            negative
-          />
-          <StatCard
-            label="Udio 0–14"
-            value={`${udio014}%`}
-            description="Mlado stanovništvo (0 do 14 godina)"
-          />
+          {statCards.map((card, i) => (
+            <motion.div
+              key={card.label}
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.45 + i * 0.15 }}
+            >
+              <StatCard
+                label={card.label}
+                value={card.value}
+                description={card.description}
+                negative={card.negative}
+              />
+            </motion.div>
+          ))}
         </div>
 
         <div className={styles.mapLayout}>

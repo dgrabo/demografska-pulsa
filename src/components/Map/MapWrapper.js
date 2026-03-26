@@ -7,7 +7,8 @@ const CroatiaMap = dynamic(() => import('./CroatiaMap'), {
   ssr: false,
   loading: () => (
     <div className={styles.loadingPlaceholder}>
-      Učitavanje karte...
+      <div className={styles.spinner} />
+      <span>Učitavanje karte...</span>
     </div>
   ),
 });

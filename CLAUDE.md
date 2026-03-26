@@ -340,7 +340,284 @@ Layout: Modal or slide-over panel, opens from the right on desktop, full-screen 
 
 ---
 
-### STEP 8 — Deploy to Vercel
+### STEP 8 — "Find Your Settlement" — search across all 6,755 Croatian settlements
+
+**Goal:** The most personal and emotionally resonant feature of the app. Every Croatian has a village, a hometown, a place their grandparents came from. This lets them search any of Croatia's 6,755 settlements and see its full demographic story.
+
+**Data source:** DZS — "Stanovništvo prema starosti i spolu po naseljima, Popis 2021." (settlements-level census data, available as Excel download from dzs.gov.hr). Cross-reference with 2011 settlement data for comparison.
+
+**Python script addition** — create `data-processing/process_naselja.py` that:
+1. Reads the settlements-level census Excel (2021 and 2011)
+2. Calculates population change per settlement
+3. Flags settlements by status:
+   - `"raste"` — population growing
+   - `"stagnira"` — change within ±2%
+   - `"pada"` — declining
+   - `"kritično"` — lost more than 30% since 2011
+   - `"napušteno"` — fewer than 10 residents in 2021
+4. Exports `public/data/naselja.json` (~6,755 rows, keep only essential fields to minimise file size: id, name, county_id, municipality_id, pop_2021, pop_2011, change_pct, status)
+
+**Frontend — `SettlementSearch` component:**
+
+Create a prominent search bar on the homepage and `/karta` page:
+- Full-text search across all settlement names (client-side, using a pre-built index from `naselja.json`)
+- Results appear as a dropdown as the user types, showing county/municipality context
+- Selecting a result navigates to `/naselje/[id]` — a dedicated settlement page
+
+**`/naselje/[id]` page — the settlement profile:**
+- Settlement name as the main heading, county and municipality as subtitle
+- Status badge (e.g. "⚠ Critical decline", "✓ Growing") with colour coding
+- Key stats in a 2×2 grid: population 2021, population 2011, absolute change, % change
+- Population history chart — if data available across multiple censuses (1991, 2001, 2011, 2021), show all four points on a small line chart
+- Age structure bar (0–14 / 15–64 / 65+) if available at settlement level
+- Context sentence: "This settlement is in the bottom X% of all Croatian settlements by population trend."
+- "See the municipality" and "See the county" navigation links
+
+**"Abandoned Croatia" special section** on the `/karta` page:
+- A toggle that overlays red dots on the map for every settlement with fewer than 10 residents in 2021
+- Counter: "X settlements in Croatia have fewer than 10 residents"
+- Clickable dots lead to the settlement profile page
+
+**Step 8 completion check:** Search returns correct results, settlement profile page renders with accurate data, abandoned settlements overlay toggles correctly on the map.
+
+---
+
+### STEP 9 — Compare any two areas side by side
+
+**Goal:** Let users compare any two counties, municipalities, or cities directly — the most useful feature for journalists, researchers, politicians, and curious citizens asking "how does my city compare to…?"
+
+**Frontend — `CompareView` component, route `/usporedi`:**
+
+**Selection UI:**
+- Two search/select inputs side by side — "Area A" and "Area B"
+- Each supports searching at county OR municipality level
+- Pre-loaded example comparisons for first-time visitors:
+  - Zagreb vs Split
+  - Vukovarsko-srijemska vs Istarska (biggest contrast)
+  - Osijek vs Zadar
+
+**Side-by-side comparison panel — for each metric, show both values with a visual diff:**
+
+| Metric | Area A | Area B |
+|---|---|---|
+| Population 2021 | — | — |
+| Population 2011 | — | — |
+| Decline % | — | — |
+| Share 65+ | — | — |
+| Share 0–14 | — | — |
+| Ageing index | — | — |
+| Population density | — | — |
+
+- The "losing" value in each row is highlighted in red, the "winning" value in green
+- An overall "winner" summary card at the top: "Istarska county is doing X times better than Vukovarsko-srijemska county in population retention"
+
+**Comparison chart:**
+- Grouped bar chart (Chart.js) showing both areas across 4 censuses (1991, 2001, 2011, 2021)
+- Lines for both areas on the same axis, making the divergence visually clear
+
+**Share button:**
+- Generates a shareable URL: `/usporedi?a=ZG&b=VSZ`
+- Restores the comparison from URL params on load — essential for sharing on social media and news articles
+
+**Step 9 completion check:** Comparison view loads, both selectors work, all metrics display correctly, URL sharing restores state correctly.
+
+---
+
+### STEP 10 — School and healthcare deserts
+
+**Goal:** Connect demographic decline to its two most visible real-world consequences — schools closing and doctors disappearing. This is the feature that will generate the most emotional response and media coverage.
+
+**Data sources:**
+- **Schools:** Ministarstvo znanosti i obrazovanja (MZO) — the school register (`Upisnik osnovnih škola`, `Upisnik srednjih škola`) is publicly available. Number of enrolled pupils per school per year is in DZS education statistics.
+- **Healthcare:** HZZO publishes the list of contracted general practitioners (LOM — liječnik opće medicine) with their addresses. The number of patients per doctor per area is available in HZZO annual reports.
+- **Fallback:** If live scraping is too complex, use DZS education statistics (number of pupils per municipality, available as Excel from podaci.dzs.hr) and hardcode healthcare deserts based on published HZZO reports.
+
+**Python script** — create `data-processing/process_usluge.py` that:
+1. Reads pupil enrollment data per municipality (2010 vs 2023 comparison)
+2. Calculates `ucenici_pad_pct` = decline in enrolled pupils
+3. Flags municipalities where primary school enrollment dropped more than 40% — these are at risk of school closure
+4. Reads or hardcodes GP availability data (patients per doctor ratio per county)
+5. Exports `public/data/usluge.json`
+
+**Frontend — new tab "Services" on the `/karta` page:**
+
+**School deserts map layer:**
+- Toggle: "Show school enrollment decline"
+- Municipalities with >40% pupil decline get a yellow border overlay on the map
+- Tooltip: "Pupil count fell from X to Y (−Z%)"
+- Sidebar stat: "X municipalities are at risk of losing their last primary school"
+
+**Healthcare deserts map layer:**
+- Toggle: "Show GP availability"
+- Colour municipalities by patients-per-doctor ratio (green = normal, amber = understaffed, red = desert)
+- Tooltip: "Average X patients per GP (national average: Y)"
+
+**Combined "Service collapse risk" score:**
+- Composite index per municipality: weights demographic decline (40%) + pupil decline (30%) + GP availability (30%)
+- Shown as a ranked list: "Top 20 municipalities most at risk of service collapse"
+- Each row is clickable and opens the municipality profile
+
+**Contextual data callout:**
+- "In 2023, X primary schools were closed in Croatia due to insufficient enrolment."
+- Source links to MZO and DZS
+
+**Step 10 completion check:** Both map toggles work independently, combined risk list renders correctly, tooltips show accurate data.
+
+---
+
+### STEP 11 — Pension system sustainability calculator
+
+**Goal:** Make abstract pension system concerns personal and tangible. Croatia's pension system is under severe pressure from demographic change — this calculator shows every citizen exactly what that means, in numbers they can understand.
+
+**Data sources:**
+- DZS: working-age population (15–64) vs retirement-age (65+) per county — from census data already loaded
+- DZS: "Zaposleni prema područjima djelatnosti" (employed persons by sector per municipality) — from census Table 22 already downloaded
+- HZMO (Croatian Pension Insurance Institute) publishes annual reports with pensioner counts and average pension by county — available as PDF/Excel on mirovinsko.hr
+
+**Python script addition** in `process_popis.py`:
+- Calculate `koeficijent_ovisnosti` = (population 0–14 + population 65+) / population 15–64 per county
+- Calculate `omjer_radnici_umirovljenici` = employed persons / pensioner count per county
+- Add both fields to `zupanije.json`
+
+**Frontend — `/mirovine` route:**
+
+**National overview:**
+- Current ratio: "In Croatia today, X workers support every 1 pensioner"
+- Historical trend: how this ratio has changed from 1991 to 2021
+- Comparison with EU average
+
+**Interactive county breakdown:**
+- Horizontal bar chart ranking all counties by worker-to-pensioner ratio
+- Clicking a county shows a detail panel with:
+  - Current ratio
+  - Trend since 2011
+  - Projected ratio by 2035 (using existing projection data)
+  - Short plain-language explanation: "At current trends, by 2035 only X workers will support each pensioner in this county."
+
+**Personal calculator:**
+- Input: user's age (slider, 20–60)
+- Input: user's county (dropdown)
+- Output: "By the time you retire (year X), the worker-to-pensioner ratio in your county will be approximately Y:1, compared to Z:1 today."
+- This is calculated client-side from the existing projection data — no backend needed
+- Add a clear disclaimer: "This is an illustrative projection based on DZS public data, not financial advice."
+
+**Step 11 completion check:** National overview renders with correct data, county chart is interactive, personal calculator produces plausible outputs, disclaimer is visible.
+
+---
+
+### STEP 12 — Diaspora, immigration and the full migration picture
+
+**Goal:** Show the complete picture of who is leaving, who is arriving, and where Croatians go. Depopulation has two sides — emigration of Croatians and immigration of foreign workers — and most people only know half the story.
+
+**Data sources:**
+- DZS: Annual migration statistics (`Migracija stanovništva RH`) — published yearly as First Release and as Excel download. Contains: emigrants by destination country, immigrants by country of origin, by county.
+- DZS: "Stanovništvo prema migracijskim obilježjima i spolu" from census — shows internal migration patterns.
+- MUP: publishes annual statistics on residence permits and work permits for foreign nationals — available in MUP statistical yearbooks.
+
+**Python script** — create `data-processing/process_migracije.py` that:
+1. Reads DZS migration Excel files for available years (typically 2013–2023)
+2. Builds time-series: emigration count per year, top 5 destination countries per year
+3. Builds time-series: immigration count per year, top 5 origin countries
+4. Calculates net migration (immigration − emigration) per year and per county
+5. Exports `public/data/migracije.json`
+
+**Frontend — `/migracije` route:**
+
+**Emigration section:**
+- Line chart: Croatians emigrating per year (2013–2023) — will show the dramatic spike after 2013 EU accession
+- Destination breakdown: stacked bar chart showing top destination countries per year (Germany, Austria, Ireland, Switzerland always dominate)
+- "Since EU accession in 2013, X Croatians have emigrated — that's more than the entire population of [city name]."
+
+**Immigration section:**
+- Line chart: foreign nationals arriving per year
+- Origin breakdown: stacked bar chart — in recent years dominated by Bosnia, Nepal, Philippines, India
+- Plain-language note: "Croatia is increasingly relying on immigration to offset emigration, but arrivals are concentrated in specific sectors (construction, hospitality, care)."
+
+**Net migration by county map:**
+- Toggle on the main `/karta` map: "Show migration balance"
+- Counties with positive net migration (gaining residents) shown in teal
+- Counties with negative net migration shown in red gradient
+- Most counties will be red; Istarska and Zadarska typically perform better
+
+**Internal migration flows:**
+- A simple Sankey or chord diagram showing the biggest internal migration flows between counties
+- "X people moved from Slavonia to Zagreb in 2021" — shows the internal drain from east to west/coast
+- Data from DZS census: "Stanovnistvo prema migracijskim obilježjima" Table 17
+
+**Step 12 completion check:** All three charts render with real data, net migration map toggle works, internal flow diagram is readable.
+
+---
+
+### STEP 13 — Data export, embed widget and journalist tools
+
+**Goal:** Make DemografskaPulsa useful not just for citizens but for journalists, researchers, NGOs and local politicians — the people who can actually drive policy change. This step turns the app into a platform, not just a visualisation.
+
+**A) Data export**
+
+Add a download button to every data view (county, municipality, settlement):
+- **CSV export** — all data for the selected area, ready for Excel/analysis
+- **JSON export** — structured data for developers
+- **PNG/SVG export** — the current chart as an image, for use in articles
+
+Implementation: CSV and JSON are trivial (just stringify the existing data objects). PNG export uses the Chart.js `canvas.toDataURL()` method. All client-side, no backend needed.
+
+Add a dedicated `/podaci` (data) page:
+- Full dataset downloads: `zupanije.json`, `opcine.json`, `naselja.json`, `migracije.json`
+- Each with: file size, last updated date, data source, licence
+- Link to the original DZS source for every dataset
+
+**B) Embeddable county widget**
+
+Create a lightweight embeddable widget — a single `<iframe>` that any Croatian news site can drop into an article.
+
+Route: `/widget/zupanija/[id]` — renders a compact (400×300px) version of the county card with:
+- County name + decline % (large, readable)
+- Small trend sparkline (5 census points)
+- "Full data: demografskapulsa.hr" footer link
+
+Add a "Copy embed code" button to every county panel:
+```html
+<iframe src="https://demografskapulsa.hr/widget/zupanija/VSZ"
+        width="400" height="300" frameborder="0">
+</iframe>
+```
+
+**C) Shareable URLs for every view**
+
+Ensure every meaningful view has a unique, bookmarkable URL:
+- `/karta?zupanija=VSZ` — map with county pre-selected
+- `/usporedi?a=ZG&b=ST` — comparison pre-loaded
+- `/naselje/12345` — specific settlement page
+- `/projekcije?scenarij=2` — specific projection scenario
+
+All URL params must be read on page load and restore the correct state. This is critical for sharing on social media and in news articles.
+
+**D) "Use this data" section for journalists and researchers**
+
+Add a prominent section to the `/o-podacima` page:
+- Suggested story angles: "5 data stories you could write using DemografskaPulsa data"
+  - "These 20 Croatian municipalities could disappear by 2050"
+  - "Croatia's pension time bomb: the counties where the math breaks down"
+  - "The EU accession emigration wave: a decade of data"
+  - "School deserts: which municipalities will lose their last primary school"
+  - "The new Croatians: where immigrants are settling and why"
+- Contact email for media inquiries
+- Citation format: how to properly credit DZS data in published articles
+
+**E) PWA (Progressive Web App) support**
+
+Add a `manifest.json` and basic service worker so the app can be installed on mobile home screens:
+- App icon (use the pulse SVG logo)
+- Theme colour matching `--color-primary`
+- Offline fallback: cache the last-viewed page
+
+This is especially useful for local politicians and community organisers who want quick access on mobile.
+
+**Step 13 completion check:** CSV and JSON downloads work for at least county and municipality level; embed widget renders correctly in an iframe; URL state restoration works for all parameterised routes; PWA manifest is valid (test with Lighthouse).
+
+---
+
+### STEP 14 — Deploy to Vercel
 
 **Goal:** The application is publicly accessible on the internet.
 
@@ -355,7 +632,7 @@ Layout: Modal or slide-over panel, opens from the right on desktop, full-screen 
    - Links to data sources
    - Licence (MIT for code, CC BY 4.0 for data)
 
-**Step 8 completion check:** App is live on a vercel.app domain, all steps work in production.
+**Step 14 completion check:** App is live on a vercel.app domain, all steps work in production.
 
 ---
 
@@ -377,4 +654,5 @@ Layout: Modal or slide-over panel, opens from the right on desktop, full-screen 
 - Data is read statically from `/public/data/` — no API calls, no database.
 - Every component must have its own CSS Module. No global styles outside `globals.css`.
 
+---
 

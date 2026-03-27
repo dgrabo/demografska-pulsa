@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import Header from '@/components/Layout/Header';
 import StatCard from '@/components/StatCard/StatCard';
@@ -10,8 +10,12 @@ import TrendChart from '@/components/Charts/TrendChart';
 import PyramidChart from '@/components/Charts/PyramidChart';
 import chartStyles from '@/components/Charts/Charts.module.css';
 import OpcineList from '@/components/OpcineList/OpcineList';
+import SettlementSearch from '@/components/SettlementSearch/SettlementSearch';
+import AbandonedOverlay from '@/components/AbandonedOverlay/AbandonedOverlay';
+import { countAbandonedByCounty } from '@/lib/settlementUtils';
 import zupanije from '../../public/data/zupanije.json';
 import opcine from '../../public/data/opcine.json';
+import naselja from '../../public/data/naselja.json';
 import styles from './page.module.css';
 
 // Compute national totals from county data
@@ -51,7 +55,7 @@ const statCards = [
     negative: true,
   },
   {
-    label: 'Udio 0–14',
+    label: 'Udio 0-14',
     value: `${udio014}%`,
     description: 'Mlado stanovništvo (0 do 14 godina)',
   },
@@ -60,10 +64,13 @@ const statCards = [
 export default function Home() {
   const [selectedCountyId, setSelectedCountyId] = useState(null);
   const [showOpcine, setShowOpcine] = useState(false);
+  const [showAbandoned, setShowAbandoned] = useState(false);
 
   const selectedCounty = selectedCountyId
     ? zupanije.find((z) => z.id === selectedCountyId)
     : null;
+
+  const abandoned = useMemo(() => countAbandonedByCounty(naselja), []);
 
   return (
     <div className={styles.page}>
@@ -87,6 +94,13 @@ export default function Home() {
           >
             413.000 manje Hrvata u 10 godina. Svaka županija bilježi pad.
           </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+          >
+            <SettlementSearch naselja={naselja} />
+          </motion.div>
         </section>
 
         <div className={styles.statsGrid}>
@@ -107,11 +121,18 @@ export default function Home() {
           ))}
         </div>
 
+        <AbandonedOverlay
+          totalAbandoned={abandoned.total}
+          isActive={showAbandoned}
+          onToggle={() => setShowAbandoned((prev) => !prev)}
+        />
+
         <div className={styles.mapLayout}>
           <MapWrapper
             zupanije={zupanije}
             selectedCountyId={selectedCountyId}
             onSelectCounty={setSelectedCountyId}
+            abandonedByCounty={showAbandoned ? abandoned.counts : null}
           />
           <CountyPanel
             county={selectedCounty}

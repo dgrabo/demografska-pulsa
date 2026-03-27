@@ -71,3 +71,24 @@ a {
   font-weight: 700;
   font-size: 0.95rem;
 }
+
+.county-tooltip-abandoned {
+  color: #501313;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: 3px;
+  padding-top: 3px;
+  border-top: 1px solid var(--color-border);
+}
+
+.county-tooltip-school {
+  color: #7a5c00;
+  font-size: 0.78rem;
+  margin-top: 2px;
+}
+
+.county-tooltip-health {
+  color: #0e6e4e;
+  font-size: 0.78rem;
+  margin-top: 2px;
+}

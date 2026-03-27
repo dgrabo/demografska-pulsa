@@ -10,6 +10,8 @@ export default function Header() {
   const pathname = usePathname();
 
   const links = [
+    { href: '/usporedi', label: 'Usporedi' },
+    { href: '/usluge', label: 'Usluge' },
     { href: '/projekcije', label: 'Projekcije' },
     { href: '/o-podacima', label: 'O podacima' },
   ];

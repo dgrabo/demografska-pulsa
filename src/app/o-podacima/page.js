@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Header from '@/components/Layout/Header';
 import styles from './o-podacima.module.css';
 
@@ -12,6 +13,7 @@ export default function OPodacimaPage() {
     <div className={styles.page}>
       <Header />
       <main className={styles.main}>
+        <Link href="/" className={styles.backLink}>&larr; Natrag na početnu</Link>
         <h1 className={styles.pageTitle}>O podacima</h1>
         <p className={styles.pageSubtitle}>
           Transparentnost izvora i metodologije ključna je za vjerodostojnost podataka.

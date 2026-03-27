@@ -131,6 +131,19 @@
   line-height: 1.6;
 }
 
+.backLink {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  text-decoration: none;
+  margin-bottom: 12px;
+  transition: color 0.2s ease;
+}
+
+.backLink:hover {
+  color: var(--color-primary);
+}
+
 @media (max-width: 768px) {
   .main {
     padding: 20px 16px 32px;

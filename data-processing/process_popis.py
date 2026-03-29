@@ -270,6 +270,10 @@ def aggregate_zupanije(merged):
         stari_pct = round((stari_2011 / pop_2011) * 100, 1) if pop_2011 > 0 else 0
         idx_star = round((stari_2011 / mladi_2011) * 100, 1) if mladi_2011 > 0 else 0
 
+        # Koeficijent ovisnosti: (mladi + stari) / radno sposobni
+        radno_sposobni_pct = 100 - mladi_pct - stari_pct
+        koef_ovisnosti = round((mladi_pct + stari_pct) / radno_sposobni_pct, 2) if radno_sposobni_pct > 0 else 0
+
         zupanije.append({
             "id": zup_id,
             "naziv": zup_naziv,
@@ -280,6 +284,7 @@ def aggregate_zupanije(merged):
             "stari_65plus_postotak": stari_pct,
             "mladi_0_14_postotak": mladi_pct,
             "indeks_starenja": idx_star,
+            "koeficijent_ovisnosti": koef_ovisnosti,
         })
 
     # Sortiraj po ID-u

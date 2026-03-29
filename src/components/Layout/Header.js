@@ -12,6 +12,7 @@ export default function Header() {
   const links = [
     { href: '/usporedi', label: 'Usporedi' },
     { href: '/usluge', label: 'Usluge' },
+    { href: '/mirovine', label: 'Mirovine' },
     { href: '/projekcije', label: 'Projekcije' },
     { href: '/o-podacima', label: 'O podacima' },
   ];

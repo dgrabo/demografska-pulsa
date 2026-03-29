@@ -8,7 +8,9 @@
     "pad_postotak": -14.93,
     "stari_65plus_postotak": 18.4,
     "mladi_0_14_postotak": 15.4,
-    "indeks_starenja": 119.4
+    "indeks_starenja": 119.4,
+    "koeficijent_ovisnosti": 0.51,
+    "omjer_radnici_umirovljenici": 0.95
   },
   {
     "id": "BPZ",
@@ -19,7 +21,9 @@
     "pad_postotak": -17.85,
     "stari_65plus_postotak": 17.6,
     "mladi_0_14_postotak": 17.1,
-    "indeks_starenja": 102.9
+    "indeks_starenja": 102.9,
+    "koeficijent_ovisnosti": 0.53,
+    "omjer_radnici_umirovljenici": 0.90
   },
   {
     "id": "DN",
@@ -30,7 +34,9 @@
     "pad_postotak": -5.71,
     "stari_65plus_postotak": 17.8,
     "mladi_0_14_postotak": 16.3,
-    "indeks_starenja": 109.7
+    "indeks_starenja": 109.7,
+    "koeficijent_ovisnosti": 0.52,
+    "omjer_radnici_umirovljenici": 1.25
   },
   {
     "id": "IS",
@@ -41,7 +47,9 @@
     "pad_postotak": -6.16,
     "stari_65plus_postotak": 18.0,
     "mladi_0_14_postotak": 13.4,
-    "indeks_starenja": 134.7
+    "indeks_starenja": 134.7,
+    "koeficijent_ovisnosti": 0.46,
+    "omjer_radnici_umirovljenici": 1.42
   },
   {
     "id": "KA",
@@ -52,7 +60,9 @@
     "pad_postotak": -12.96,
     "stari_65plus_postotak": 21.1,
     "mladi_0_14_postotak": 13.4,
-    "indeks_starenja": 157.0
+    "indeks_starenja": 157.0,
+    "koeficijent_ovisnosti": 0.53,
+    "omjer_radnici_umirovljenici": 0.92
   },
   {
     "id": "KR",
@@ -63,7 +73,9 @@
     "pad_postotak": -9.17,
     "stari_65plus_postotak": 17.6,
     "mladi_0_14_postotak": 15.0,
-    "indeks_starenja": 117.4
+    "indeks_starenja": 117.4,
+    "koeficijent_ovisnosti": 0.48,
+    "omjer_radnici_umirovljenici": 1.10
   },
   {
     "id": "KZ",
@@ -74,7 +86,9 @@
     "pad_postotak": -12.43,
     "stari_65plus_postotak": 17.7,
     "mladi_0_14_postotak": 15.7,
-    "indeks_starenja": 112.9
+    "indeks_starenja": 112.9,
+    "koeficijent_ovisnosti": 0.50,
+    "omjer_radnici_umirovljenici": 1.05
   },
   {
     "id": "LS",
@@ -85,7 +99,9 @@
     "pad_postotak": -16.06,
     "stari_65plus_postotak": 24.7,
     "mladi_0_14_postotak": 13.6,
-    "indeks_starenja": 181.6
+    "indeks_starenja": 181.6,
+    "koeficijent_ovisnosti": 0.62,
+    "omjer_radnici_umirovljenici": 0.82
   },
   {
     "id": "ME",
@@ -96,7 +112,9 @@
     "pad_postotak": -7.52,
     "stari_65plus_postotak": 15.6,
     "mladi_0_14_postotak": 16.9,
-    "indeks_starenja": 92.3
+    "indeks_starenja": 92.3,
+    "koeficijent_ovisnosti": 0.48,
+    "omjer_radnici_umirovljenici": 1.20
   },
   {
     "id": "OB",
@@ -107,7 +125,9 @@
     "pad_postotak": -15.41,
     "stari_65plus_postotak": 16.9,
     "mladi_0_14_postotak": 15.3,
-    "indeks_starenja": 110.1
+    "indeks_starenja": 110.1,
+    "koeficijent_ovisnosti": 0.47,
+    "omjer_radnici_umirovljenici": 0.98
   },
   {
     "id": "PG",
@@ -118,7 +138,9 @@
     "pad_postotak": -10.39,
     "stari_65plus_postotak": 18.9,
     "mladi_0_14_postotak": 12.5,
-    "indeks_starenja": 151.5
+    "indeks_starenja": 151.5,
+    "koeficijent_ovisnosti": 0.46,
+    "omjer_radnici_umirovljenici": 1.30
   },
   {
     "id": "PS",
@@ -129,7 +151,9 @@
     "pad_postotak": -17.88,
     "stari_65plus_postotak": 17.9,
     "mladi_0_14_postotak": 16.8,
-    "indeks_starenja": 106.5
+    "indeks_starenja": 106.5,
+    "koeficijent_ovisnosti": 0.53,
+    "omjer_radnici_umirovljenici": 0.88
   },
   {
     "id": "SD",
@@ -140,7 +164,9 @@
     "pad_postotak": -6.9,
     "stari_65plus_postotak": 16.6,
     "mladi_0_14_postotak": 16.4,
-    "indeks_starenja": 101.4
+    "indeks_starenja": 101.4,
+    "koeficijent_ovisnosti": 0.49,
+    "omjer_radnici_umirovljenici": 1.22
   },
   {
     "id": "SK",
@@ -151,7 +177,9 @@
     "pad_postotak": -11.88,
     "stari_65plus_postotak": 21.8,
     "mladi_0_14_postotak": 14.1,
-    "indeks_starenja": 154.5
+    "indeks_starenja": 154.5,
+    "koeficijent_ovisnosti": 0.56,
+    "omjer_radnici_umirovljenici": 0.90
   },
   {
     "id": "SM",
@@ -162,7 +190,9 @@
     "pad_postotak": -19.04,
     "stari_65plus_postotak": 19.5,
     "mladi_0_14_postotak": 14.5,
-    "indeks_starenja": 134.6
+    "indeks_starenja": 134.6,
+    "koeficijent_ovisnosti": 0.52,
+    "omjer_radnici_umirovljenici": 0.88
   },
   {
     "id": "VK",
@@ -173,7 +203,9 @@
     "pad_postotak": -20.28,
     "stari_65plus_postotak": 17.1,
     "mladi_0_14_postotak": 17.0,
-    "indeks_starenja": 100.8
+    "indeks_starenja": 100.8,
+    "koeficijent_ovisnosti": 0.52,
+    "omjer_radnici_umirovljenici": 0.83
   },
   {
     "id": "VP",
@@ -184,7 +216,9 @@
     "pad_postotak": -17.05,
     "stari_65plus_postotak": 17.1,
     "mladi_0_14_postotak": 15.9,
-    "indeks_starenja": 107.8
+    "indeks_starenja": 107.8,
+    "koeficijent_ovisnosti": 0.49,
+    "omjer_radnici_umirovljenici": 0.85
   },
   {
     "id": "VZ",
@@ -195,7 +229,9 @@
     "pad_postotak": -9.36,
     "stari_65plus_postotak": 16.8,
     "mladi_0_14_postotak": 15.4,
-    "indeks_starenja": 109.2
+    "indeks_starenja": 109.2,
+    "koeficijent_ovisnosti": 0.47,
+    "omjer_radnici_umirovljenici": 1.18
   },
   {
     "id": "ZD",
@@ -206,7 +242,9 @@
     "pad_postotak": -6.03,
     "stari_65plus_postotak": 18.5,
     "mladi_0_14_postotak": 15.8,
-    "indeks_starenja": 117.5
+    "indeks_starenja": 117.5,
+    "koeficijent_ovisnosti": 0.52,
+    "omjer_radnici_umirovljenici": 1.28
   },
   {
     "id": "ZG",
@@ -217,7 +255,9 @@
     "pad_postotak": -2.9,
     "stari_65plus_postotak": 17.3,
     "mladi_0_14_postotak": 14.7,
-    "indeks_starenja": 117.8
+    "indeks_starenja": 117.8,
+    "koeficijent_ovisnosti": 0.47,
+    "omjer_radnici_umirovljenici": 1.48
   },
   {
     "id": "ZK",
@@ -228,6 +268,8 @@
     "pad_postotak": -5.55,
     "stari_65plus_postotak": 15.9,
     "mladi_0_14_postotak": 16.3,
-    "indeks_starenja": 97.1
+    "indeks_starenja": 97.1,
+    "koeficijent_ovisnosti": 0.47,
+    "omjer_radnici_umirovljenici": 1.35
   }
 ]

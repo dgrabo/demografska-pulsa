@@ -13,7 +13,7 @@ const CroatiaMap = dynamic(() => import('./CroatiaMap'), {
   ),
 });
 
-export default function MapWrapper({ zupanije, selectedCountyId, onSelectCounty, abandonedByCounty, schoolByCounty, healthByCounty }) {
+export default function MapWrapper({ zupanije, selectedCountyId, onSelectCounty, abandonedByCounty, schoolByCounty, healthByCounty, migrationByCounty }) {
   return (
     <CroatiaMap
       zupanije={zupanije}
@@ -22,6 +22,7 @@ export default function MapWrapper({ zupanije, selectedCountyId, onSelectCounty,
       abandonedByCounty={abandonedByCounty}
       schoolByCounty={schoolByCounty}
       healthByCounty={healthByCounty}
+      migrationByCounty={migrationByCounty}
     />
   );
 }

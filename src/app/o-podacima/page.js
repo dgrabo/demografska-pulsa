@@ -98,6 +98,20 @@ export default function OPodacimaPage() {
                 mirovinsko.hr
               </a>
             </li>
+            <li>
+              <strong>Migracija stanovništva RH 2001.–2024.</strong> — DZS, godišnja priopćenja
+              o vanjskoj i unutarnjoj migraciji (stan-2021 do stan-2025). Sadržava podatke o
+              doseljenim i odseljenim osobama po zemlji podrijetla/odredišta, po županijama te
+              unutarnju migraciju među županijama.{' '}
+              <a
+                href="https://podaci.dzs.hr/hr/podaci/stanovnistvo/migracija-stanovnistva/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.link}
+              >
+                podaci.dzs.hr
+              </a>
+            </li>
           </ul>
         </section>
 
@@ -164,6 +178,17 @@ export default function OPodacimaPage() {
               </p>
               <code className={styles.formula}>
                 koef_ovisnosti = (mladi_% + stari_%) / (100 - mladi_% - stari_%)
+              </code>
+            </div>
+            <div className={styles.methodCard}>
+              <h3>Migracijski saldo</h3>
+              <p>
+                Razlika između broja doseljenih (imigracija) i odseljenih (emigracija) osoba.
+                Pozitivan saldo znači neto dobitak stanovništva, negativan znači gubitak.
+                Razlikujemo vanjsku (s inozemstvom) i unutarnju (među županijama) migraciju.
+              </p>
+              <code className={styles.formula}>
+                saldo = doseljeni - odseljeni
               </code>
             </div>
             <div className={styles.methodCard}>

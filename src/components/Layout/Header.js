@@ -13,6 +13,7 @@ export default function Header() {
     { href: '/usporedi', label: 'Usporedi' },
     { href: '/usluge', label: 'Usluge' },
     { href: '/mirovine', label: 'Mirovine' },
+    { href: '/migracije', label: 'Migracije' },
     { href: '/projekcije', label: 'Projekcije' },
     { href: '/o-podacima', label: 'O podacima' },
   ];

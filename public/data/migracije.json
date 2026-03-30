@@ -1,0 +1,2632 @@
+{
+  "nacionalni_trend": [
+    {
+      "godina": 2001,
+      "doseljeni": 24415,
+      "odseljeni": 7488,
+      "saldo": 16927
+    },
+    {
+      "godina": 2002,
+      "doseljeni": 20365,
+      "odseljeni": 11767,
+      "saldo": 8598
+    },
+    {
+      "godina": 2003,
+      "doseljeni": 18455,
+      "odseljeni": 6534,
+      "saldo": 11921
+    },
+    {
+      "godina": 2004,
+      "doseljeni": 18383,
+      "odseljeni": 6812,
+      "saldo": 11571
+    },
+    {
+      "godina": 2005,
+      "doseljeni": 14230,
+      "odseljeni": 6012,
+      "saldo": 8218
+    },
+    {
+      "godina": 2006,
+      "doseljeni": 14978,
+      "odseljeni": 7692,
+      "saldo": 7286
+    },
+    {
+      "godina": 2007,
+      "doseljeni": 14622,
+      "odseljeni": 9002,
+      "saldo": 5620
+    },
+    {
+      "godina": 2008,
+      "doseljeni": 14541,
+      "odseljeni": 7488,
+      "saldo": 7053
+    },
+    {
+      "godina": 2009,
+      "doseljeni": 8468,
+      "odseljeni": 9940,
+      "saldo": -1472
+    },
+    {
+      "godina": 2010,
+      "doseljeni": 4985,
+      "odseljeni": 9860,
+      "saldo": -4875
+    },
+    {
+      "godina": 2011,
+      "doseljeni": 8534,
+      "odseljeni": 12699,
+      "saldo": -4165
+    },
+    {
+      "godina": 2012,
+      "doseljeni": 8959,
+      "odseljeni": 12877,
+      "saldo": -3918
+    },
+    {
+      "godina": 2013,
+      "doseljeni": 10378,
+      "odseljeni": 15262,
+      "saldo": -4884
+    },
+    {
+      "godina": 2014,
+      "doseljeni": 10638,
+      "odseljeni": 20858,
+      "saldo": -10220
+    },
+    {
+      "godina": 2015,
+      "doseljeni": 11706,
+      "odseljeni": 29651,
+      "saldo": -17945
+    },
+    {
+      "godina": 2016,
+      "doseljeni": 13985,
+      "odseljeni": 36436,
+      "saldo": -22451
+    },
+    {
+      "godina": 2017,
+      "doseljeni": 15553,
+      "odseljeni": 47352,
+      "saldo": -31799
+    },
+    {
+      "godina": 2018,
+      "doseljeni": 26029,
+      "odseljeni": 39515,
+      "saldo": -13486
+    },
+    {
+      "godina": 2019,
+      "doseljeni": 37726,
+      "odseljeni": 40148,
+      "saldo": -2422
+    },
+    {
+      "godina": 2020,
+      "doseljeni": 33414,
+      "odseljeni": 34046,
+      "saldo": -632
+    },
+    {
+      "godina": 2021,
+      "doseljeni": 35912,
+      "odseljeni": 40424,
+      "saldo": -4512
+    },
+    {
+      "godina": 2022,
+      "doseljeni": 57972,
+      "odseljeni": 46287,
+      "saldo": 11685
+    },
+    {
+      "godina": 2023,
+      "doseljeni": 69396,
+      "odseljeni": 39218,
+      "saldo": 30178
+    },
+    {
+      "godina": 2024,
+      "doseljeni": 70391,
+      "odseljeni": 38997,
+      "saldo": 31394
+    }
+  ],
+  "drzave_emigracija": {
+    "Njemačka": [
+      {
+        "godina": 2001,
+        "broj": 1015
+      },
+      {
+        "godina": 2002,
+        "broj": 1446
+      },
+      {
+        "godina": 2003,
+        "broj": 1020
+      },
+      {
+        "godina": 2004,
+        "broj": 939
+      },
+      {
+        "godina": 2005,
+        "broj": 500
+      },
+      {
+        "godina": 2006,
+        "broj": 840
+      },
+      {
+        "godina": 2007,
+        "broj": 1096
+      },
+      {
+        "godina": 2008,
+        "broj": 655
+      },
+      {
+        "godina": 2009,
+        "broj": 459
+      },
+      {
+        "godina": 2010,
+        "broj": 775
+      },
+      {
+        "godina": 2011,
+        "broj": 1061
+      },
+      {
+        "godina": 2012,
+        "broj": 1883
+      },
+      {
+        "godina": 2013,
+        "broj": 2193
+      },
+      {
+        "godina": 2014,
+        "broj": 7961
+      },
+      {
+        "godina": 2015,
+        "broj": 12325
+      },
+      {
+        "godina": 2016,
+        "broj": 20432
+      },
+      {
+        "godina": 2017,
+        "broj": 29053
+      },
+      {
+        "godina": 2018,
+        "broj": 21732
+      },
+      {
+        "godina": 2019,
+        "broj": 19290
+      },
+      {
+        "godina": 2020,
+        "broj": 11636
+      },
+      {
+        "godina": 2021,
+        "broj": 13077
+      },
+      {
+        "godina": 2022,
+        "broj": 14371
+      },
+      {
+        "godina": 2023,
+        "broj": 11083
+      },
+      {
+        "godina": 2024,
+        "broj": 8233
+      }
+    ],
+    "Austrija": [
+      {
+        "godina": 2001,
+        "broj": 738
+      },
+      {
+        "godina": 2002,
+        "broj": 1106
+      },
+      {
+        "godina": 2003,
+        "broj": 1119
+      },
+      {
+        "godina": 2004,
+        "broj": 951
+      },
+      {
+        "godina": 2005,
+        "broj": 580
+      },
+      {
+        "godina": 2006,
+        "broj": 1074
+      },
+      {
+        "godina": 2007,
+        "broj": 885
+      },
+      {
+        "godina": 2008,
+        "broj": 432
+      },
+      {
+        "godina": 2009,
+        "broj": 292
+      },
+      {
+        "godina": 2010,
+        "broj": 410
+      },
+      {
+        "godina": 2011,
+        "broj": 480
+      },
+      {
+        "godina": 2012,
+        "broj": 537
+      },
+      {
+        "godina": 2013,
+        "broj": 770
+      },
+      {
+        "godina": 2014,
+        "broj": 2000
+      },
+      {
+        "godina": 2015,
+        "broj": 3234
+      },
+      {
+        "godina": 2016,
+        "broj": 2164
+      },
+      {
+        "godina": 2017,
+        "broj": 2706
+      },
+      {
+        "godina": 2018,
+        "broj": 2607
+      },
+      {
+        "godina": 2019,
+        "broj": 2916
+      },
+      {
+        "godina": 2020,
+        "broj": 2346
+      },
+      {
+        "godina": 2021,
+        "broj": 3425
+      },
+      {
+        "godina": 2022,
+        "broj": 4933
+      },
+      {
+        "godina": 2023,
+        "broj": 4014
+      },
+      {
+        "godina": 2024,
+        "broj": 3181
+      }
+    ],
+    "Irska": [
+      {
+        "godina": 2001,
+        "broj": 1
+      },
+      {
+        "godina": 2002,
+        "broj": 0
+      },
+      {
+        "godina": 2003,
+        "broj": 0
+      },
+      {
+        "godina": 2004,
+        "broj": 0
+      },
+      {
+        "godina": 2005,
+        "broj": 0
+      },
+      {
+        "godina": 2006,
+        "broj": 2
+      },
+      {
+        "godina": 2007,
+        "broj": 3
+      },
+      {
+        "godina": 2008,
+        "broj": 0
+      },
+      {
+        "godina": 2009,
+        "broj": 0
+      },
+      {
+        "godina": 2010,
+        "broj": 2
+      },
+      {
+        "godina": 2011,
+        "broj": 14
+      },
+      {
+        "godina": 2012,
+        "broj": 4
+      },
+      {
+        "godina": 2013,
+        "broj": 35
+      },
+      {
+        "godina": 2014,
+        "broj": 131
+      },
+      {
+        "godina": 2015,
+        "broj": 265
+      },
+      {
+        "godina": 2016,
+        "broj": 1917
+      },
+      {
+        "godina": 2017,
+        "broj": 2676
+      },
+      {
+        "godina": 2018,
+        "broj": 2051
+      },
+      {
+        "godina": 2019,
+        "broj": 1343
+      },
+      {
+        "godina": 2020,
+        "broj": 639
+      },
+      {
+        "godina": 2021,
+        "broj": 866
+      },
+      {
+        "godina": 2022,
+        "broj": 1187
+      },
+      {
+        "godina": 2023,
+        "broj": 577
+      },
+      {
+        "godina": 2024,
+        "broj": 425
+      }
+    ],
+    "Švicarska": [
+      {
+        "godina": 2001,
+        "broj": 22
+      },
+      {
+        "godina": 2002,
+        "broj": 32
+      },
+      {
+        "godina": 2003,
+        "broj": 25
+      },
+      {
+        "godina": 2004,
+        "broj": 25
+      },
+      {
+        "godina": 2005,
+        "broj": 29
+      },
+      {
+        "godina": 2006,
+        "broj": 23
+      },
+      {
+        "godina": 2007,
+        "broj": 39
+      },
+      {
+        "godina": 2008,
+        "broj": 18
+      },
+      {
+        "godina": 2009,
+        "broj": 35
+      },
+      {
+        "godina": 2010,
+        "broj": 140
+      },
+      {
+        "godina": 2011,
+        "broj": 153
+      },
+      {
+        "godina": 2012,
+        "broj": 292
+      },
+      {
+        "godina": 2013,
+        "broj": 619
+      },
+      {
+        "godina": 2014,
+        "broj": 831
+      },
+      {
+        "godina": 2015,
+        "broj": 1582
+      },
+      {
+        "godina": 2016,
+        "broj": 697
+      },
+      {
+        "godina": 2017,
+        "broj": 702
+      },
+      {
+        "godina": 2018,
+        "broj": 873
+      },
+      {
+        "godina": 2019,
+        "broj": 1014
+      },
+      {
+        "godina": 2020,
+        "broj": 791
+      },
+      {
+        "godina": 2021,
+        "broj": 1125
+      },
+      {
+        "godina": 2022,
+        "broj": 1753
+      },
+      {
+        "godina": 2023,
+        "broj": 1672
+      },
+      {
+        "godina": 2024,
+        "broj": 1304
+      }
+    ],
+    "Švedska": [
+      {
+        "godina": 2001,
+        "broj": 22
+      },
+      {
+        "godina": 2002,
+        "broj": 14
+      },
+      {
+        "godina": 2003,
+        "broj": 9
+      },
+      {
+        "godina": 2004,
+        "broj": 9
+      },
+      {
+        "godina": 2005,
+        "broj": 6
+      },
+      {
+        "godina": 2006,
+        "broj": 10
+      },
+      {
+        "godina": 2007,
+        "broj": 17
+      },
+      {
+        "godina": 2008,
+        "broj": 6
+      },
+      {
+        "godina": 2009,
+        "broj": 8
+      },
+      {
+        "godina": 2010,
+        "broj": 38
+      },
+      {
+        "godina": 2011,
+        "broj": 50
+      },
+      {
+        "godina": 2012,
+        "broj": 71
+      },
+      {
+        "godina": 2013,
+        "broj": 97
+      },
+      {
+        "godina": 2014,
+        "broj": 226
+      },
+      {
+        "godina": 2015,
+        "broj": 401
+      },
+      {
+        "godina": 2016,
+        "broj": 681
+      },
+      {
+        "godina": 2017,
+        "broj": 802
+      },
+      {
+        "godina": 2018,
+        "broj": 814
+      },
+      {
+        "godina": 2019,
+        "broj": 714
+      },
+      {
+        "godina": 2020,
+        "broj": 414
+      },
+      {
+        "godina": 2021,
+        "broj": 518
+      },
+      {
+        "godina": 2022,
+        "broj": 643
+      },
+      {
+        "godina": 2023,
+        "broj": 435
+      },
+      {
+        "godina": 2024,
+        "broj": 323
+      }
+    ],
+    "Slovenija": [
+      {
+        "godina": 2001,
+        "broj": 142
+      },
+      {
+        "godina": 2002,
+        "broj": 158
+      },
+      {
+        "godina": 2003,
+        "broj": 190
+      },
+      {
+        "godina": 2004,
+        "broj": 166
+      },
+      {
+        "godina": 2005,
+        "broj": 118
+      },
+      {
+        "godina": 2006,
+        "broj": 155
+      },
+      {
+        "godina": 2007,
+        "broj": 206
+      },
+      {
+        "godina": 2008,
+        "broj": 122
+      },
+      {
+        "godina": 2009,
+        "broj": 110
+      },
+      {
+        "godina": 2010,
+        "broj": 149
+      },
+      {
+        "godina": 2011,
+        "broj": 237
+      },
+      {
+        "godina": 2012,
+        "broj": 343
+      },
+      {
+        "godina": 2013,
+        "broj": 318
+      },
+      {
+        "godina": 2014,
+        "broj": 325
+      },
+      {
+        "godina": 2015,
+        "broj": 561
+      },
+      {
+        "godina": 2016,
+        "broj": 702
+      },
+      {
+        "godina": 2017,
+        "broj": 717
+      },
+      {
+        "godina": 2018,
+        "broj": 685
+      },
+      {
+        "godina": 2019,
+        "broj": 675
+      },
+      {
+        "godina": 2020,
+        "broj": 602
+      },
+      {
+        "godina": 2021,
+        "broj": 804
+      },
+      {
+        "godina": 2022,
+        "broj": 891
+      },
+      {
+        "godina": 2023,
+        "broj": 490
+      },
+      {
+        "godina": 2024,
+        "broj": 450
+      }
+    ],
+    "Ostale": [
+      {
+        "godina": 2001,
+        "broj": 5548
+      },
+      {
+        "godina": 2002,
+        "broj": 9011
+      },
+      {
+        "godina": 2003,
+        "broj": 4171
+      },
+      {
+        "godina": 2004,
+        "broj": 4722
+      },
+      {
+        "godina": 2005,
+        "broj": 4779
+      },
+      {
+        "godina": 2006,
+        "broj": 5588
+      },
+      {
+        "godina": 2007,
+        "broj": 6756
+      },
+      {
+        "godina": 2008,
+        "broj": 6255
+      },
+      {
+        "godina": 2009,
+        "broj": 9036
+      },
+      {
+        "godina": 2010,
+        "broj": 8346
+      },
+      {
+        "godina": 2011,
+        "broj": 10704
+      },
+      {
+        "godina": 2012,
+        "broj": 9747
+      },
+      {
+        "godina": 2013,
+        "broj": 11230
+      },
+      {
+        "godina": 2014,
+        "broj": 9384
+      },
+      {
+        "godina": 2015,
+        "broj": 11283
+      },
+      {
+        "godina": 2016,
+        "broj": 9843
+      },
+      {
+        "godina": 2017,
+        "broj": 10696
+      },
+      {
+        "godina": 2018,
+        "broj": 10753
+      },
+      {
+        "godina": 2019,
+        "broj": 14196
+      },
+      {
+        "godina": 2020,
+        "broj": 17618
+      },
+      {
+        "godina": 2021,
+        "broj": 20609
+      },
+      {
+        "godina": 2022,
+        "broj": 22509
+      },
+      {
+        "godina": 2023,
+        "broj": 20947
+      },
+      {
+        "godina": 2024,
+        "broj": 25081
+      }
+    ]
+  },
+  "drzave_imigracija": {
+    "Bosna i Hercegovina": [
+      {
+        "godina": 2001,
+        "broj": 15188
+      },
+      {
+        "godina": 2002,
+        "broj": 11869
+      },
+      {
+        "godina": 2003,
+        "broj": 10896
+      },
+      {
+        "godina": 2004,
+        "broj": 11141
+      },
+      {
+        "godina": 2005,
+        "broj": 8358
+      },
+      {
+        "godina": 2006,
+        "broj": 9327
+      },
+      {
+        "godina": 2007,
+        "broj": 8944
+      },
+      {
+        "godina": 2008,
+        "broj": 8172
+      },
+      {
+        "godina": 2009,
+        "broj": 4874
+      },
+      {
+        "godina": 2010,
+        "broj": 2589
+      },
+      {
+        "godina": 2011,
+        "broj": 3666
+      },
+      {
+        "godina": 2012,
+        "broj": 4242
+      },
+      {
+        "godina": 2013,
+        "broj": 4902
+      },
+      {
+        "godina": 2014,
+        "broj": 4165
+      },
+      {
+        "godina": 2015,
+        "broj": 3804
+      },
+      {
+        "godina": 2016,
+        "broj": 4348
+      },
+      {
+        "godina": 2017,
+        "broj": 4949
+      },
+      {
+        "godina": 2018,
+        "broj": 10348
+      },
+      {
+        "godina": 2019,
+        "broj": 12040
+      },
+      {
+        "godina": 2020,
+        "broj": 9438
+      },
+      {
+        "godina": 2021,
+        "broj": 8055
+      },
+      {
+        "godina": 2022,
+        "broj": 8465
+      },
+      {
+        "godina": 2023,
+        "broj": 8478
+      },
+      {
+        "godina": 2024,
+        "broj": 7940
+      }
+    ],
+    "Srbija": [
+      {
+        "godina": 2001,
+        "broj": 2123
+      },
+      {
+        "godina": 2002,
+        "broj": 1839
+      },
+      {
+        "godina": 2003,
+        "broj": 1440
+      },
+      {
+        "godina": 2004,
+        "broj": 1550
+      },
+      {
+        "godina": 2005,
+        "broj": 1176
+      },
+      {
+        "godina": 2006,
+        "broj": 1505
+      },
+      {
+        "godina": 2007,
+        "broj": 1479
+      },
+      {
+        "godina": 2008,
+        "broj": 1456
+      },
+      {
+        "godina": 2009,
+        "broj": 755
+      },
+      {
+        "godina": 2010,
+        "broj": 371
+      },
+      {
+        "godina": 2011,
+        "broj": 690
+      },
+      {
+        "godina": 2012,
+        "broj": 769
+      },
+      {
+        "godina": 2013,
+        "broj": 703
+      },
+      {
+        "godina": 2014,
+        "broj": 821
+      },
+      {
+        "godina": 2015,
+        "broj": 1038
+      },
+      {
+        "godina": 2016,
+        "broj": 1368
+      },
+      {
+        "godina": 2017,
+        "broj": 1272
+      },
+      {
+        "godina": 2018,
+        "broj": 2880
+      },
+      {
+        "godina": 2019,
+        "broj": 4800
+      },
+      {
+        "godina": 2020,
+        "broj": 4704
+      },
+      {
+        "godina": 2021,
+        "broj": 3743
+      },
+      {
+        "godina": 2022,
+        "broj": 4515
+      },
+      {
+        "godina": 2023,
+        "broj": 5419
+      },
+      {
+        "godina": 2024,
+        "broj": 5525
+      }
+    ],
+    "Azija": [
+      {
+        "godina": 2001,
+        "broj": 10
+      },
+      {
+        "godina": 2002,
+        "broj": 7
+      },
+      {
+        "godina": 2003,
+        "broj": 8
+      },
+      {
+        "godina": 2004,
+        "broj": 8
+      },
+      {
+        "godina": 2005,
+        "broj": 13
+      },
+      {
+        "godina": 2006,
+        "broj": 34
+      },
+      {
+        "godina": 2007,
+        "broj": 35
+      },
+      {
+        "godina": 2008,
+        "broj": 102
+      },
+      {
+        "godina": 2009,
+        "broj": 106
+      },
+      {
+        "godina": 2010,
+        "broj": 50
+      },
+      {
+        "godina": 2011,
+        "broj": 247
+      },
+      {
+        "godina": 2012,
+        "broj": 291
+      },
+      {
+        "godina": 2013,
+        "broj": 308
+      },
+      {
+        "godina": 2014,
+        "broj": 376
+      },
+      {
+        "godina": 2015,
+        "broj": 475
+      },
+      {
+        "godina": 2016,
+        "broj": 447
+      },
+      {
+        "godina": 2017,
+        "broj": 419
+      },
+      {
+        "godina": 2018,
+        "broj": 903
+      },
+      {
+        "godina": 2019,
+        "broj": 3113
+      },
+      {
+        "godina": 2020,
+        "broj": 2276
+      },
+      {
+        "godina": 2021,
+        "broj": 4436
+      },
+      {
+        "godina": 2022,
+        "broj": 11869
+      },
+      {
+        "godina": 2023,
+        "broj": 17857
+      },
+      {
+        "godina": 2024,
+        "broj": 26524
+      }
+    ],
+    "Sjeverna Makedonija": [
+      {
+        "godina": 2001,
+        "broj": 180
+      },
+      {
+        "godina": 2002,
+        "broj": 90
+      },
+      {
+        "godina": 2003,
+        "broj": 92
+      },
+      {
+        "godina": 2004,
+        "broj": 118
+      },
+      {
+        "godina": 2005,
+        "broj": 90
+      },
+      {
+        "godina": 2006,
+        "broj": 141
+      },
+      {
+        "godina": 2007,
+        "broj": 138
+      },
+      {
+        "godina": 2008,
+        "broj": 271
+      },
+      {
+        "godina": 2009,
+        "broj": 113
+      },
+      {
+        "godina": 2010,
+        "broj": 66
+      },
+      {
+        "godina": 2011,
+        "broj": 211
+      },
+      {
+        "godina": 2012,
+        "broj": 299
+      },
+      {
+        "godina": 2013,
+        "broj": 282
+      },
+      {
+        "godina": 2014,
+        "broj": 299
+      },
+      {
+        "godina": 2015,
+        "broj": 285
+      },
+      {
+        "godina": 2016,
+        "broj": 213
+      },
+      {
+        "godina": 2017,
+        "broj": 238
+      },
+      {
+        "godina": 2018,
+        "broj": 844
+      },
+      {
+        "godina": 2019,
+        "broj": 1504
+      },
+      {
+        "godina": 2020,
+        "broj": 1120
+      },
+      {
+        "godina": 2021,
+        "broj": 1051
+      },
+      {
+        "godina": 2022,
+        "broj": 1623
+      },
+      {
+        "godina": 2023,
+        "broj": 2144
+      },
+      {
+        "godina": 2024,
+        "broj": 2117
+      }
+    ],
+    "Ostale": [
+      {
+        "godina": 2001,
+        "broj": 6914
+      },
+      {
+        "godina": 2002,
+        "broj": 6560
+      },
+      {
+        "godina": 2003,
+        "broj": 6019
+      },
+      {
+        "godina": 2004,
+        "broj": 5566
+      },
+      {
+        "godina": 2005,
+        "broj": 4593
+      },
+      {
+        "godina": 2006,
+        "broj": 3971
+      },
+      {
+        "godina": 2007,
+        "broj": 4026
+      },
+      {
+        "godina": 2008,
+        "broj": 4540
+      },
+      {
+        "godina": 2009,
+        "broj": 2620
+      },
+      {
+        "godina": 2010,
+        "broj": 1909
+      },
+      {
+        "godina": 2011,
+        "broj": 3720
+      },
+      {
+        "godina": 2012,
+        "broj": 3358
+      },
+      {
+        "godina": 2013,
+        "broj": 4183
+      },
+      {
+        "godina": 2014,
+        "broj": 4977
+      },
+      {
+        "godina": 2015,
+        "broj": 6104
+      },
+      {
+        "godina": 2016,
+        "broj": 7609
+      },
+      {
+        "godina": 2017,
+        "broj": 8675
+      },
+      {
+        "godina": 2018,
+        "broj": 11054
+      },
+      {
+        "godina": 2019,
+        "broj": 16269
+      },
+      {
+        "godina": 2020,
+        "broj": 15876
+      },
+      {
+        "godina": 2021,
+        "broj": 18627
+      },
+      {
+        "godina": 2022,
+        "broj": 31500
+      },
+      {
+        "godina": 2023,
+        "broj": 35498
+      },
+      {
+        "godina": 2024,
+        "broj": 28285
+      }
+    ]
+  },
+  "po_zupanijama": {
+    "BB": {
+      "naziv": "Bjelovarsko-bilogorska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 131,
+          "odseljeni": 986,
+          "saldo": -855
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 162,
+          "odseljeni": 1016,
+          "saldo": -854
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 217,
+          "odseljeni": 869,
+          "saldo": -652
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 294,
+          "odseljeni": 920,
+          "saldo": -626
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 335,
+          "odseljeni": 634,
+          "saldo": -299
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 321,
+          "odseljeni": 757,
+          "saldo": -436
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 466,
+          "odseljeni": 852,
+          "saldo": -386
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 622,
+          "odseljeni": 718,
+          "saldo": -96
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 796,
+          "odseljeni": 668,
+          "saldo": 128
+        }
+      ],
+      "unutarnja_saldo": -214,
+      "ukupni_saldo_zadnja_godina": -86,
+      "saldo_inozemstvo_zadnja": 128
+    },
+    "BPZ": {
+      "naziv": "Brodsko-posavska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 329,
+          "odseljeni": 2208,
+          "saldo": -1879
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 348,
+          "odseljeni": 3271,
+          "saldo": -2923
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 807,
+          "odseljeni": 2258,
+          "saldo": -1451
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 1184,
+          "odseljeni": 2073,
+          "saldo": -889
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 927,
+          "odseljeni": 1436,
+          "saldo": -509
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 1039,
+          "odseljeni": 1860,
+          "saldo": -821
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 1549,
+          "odseljeni": 2157,
+          "saldo": -608
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 2281,
+          "odseljeni": 1625,
+          "saldo": 656
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 2238,
+          "odseljeni": 2158,
+          "saldo": 80
+        }
+      ],
+      "unutarnja_saldo": -357,
+      "ukupni_saldo_zadnja_godina": -277,
+      "saldo_inozemstvo_zadnja": 80
+    },
+    "DN": {
+      "naziv": "Dubrovačko-neretvanska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 515,
+          "odseljeni": 886,
+          "saldo": -371
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 555,
+          "odseljeni": 788,
+          "saldo": -233
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 1016,
+          "odseljeni": 716,
+          "saldo": 300
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 2025,
+          "odseljeni": 725,
+          "saldo": 1300
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 1600,
+          "odseljeni": 1112,
+          "saldo": 488
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 1188,
+          "odseljeni": 1563,
+          "saldo": -375
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 1712,
+          "odseljeni": 1378,
+          "saldo": 334
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 2268,
+          "odseljeni": 1006,
+          "saldo": 1262
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 2381,
+          "odseljeni": 1008,
+          "saldo": 1373
+        }
+      ],
+      "unutarnja_saldo": -194,
+      "ukupni_saldo_zadnja_godina": 1179,
+      "saldo_inozemstvo_zadnja": 1373
+    },
+    "IS": {
+      "naziv": "Istarska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 1562,
+          "odseljeni": 1379,
+          "saldo": 183
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 1859,
+          "odseljeni": 1543,
+          "saldo": 316
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 2765,
+          "odseljeni": 1852,
+          "saldo": 913
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 3977,
+          "odseljeni": 2582,
+          "saldo": 1395
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 3813,
+          "odseljeni": 2600,
+          "saldo": 1213
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 3046,
+          "odseljeni": 2694,
+          "saldo": 352
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 5463,
+          "odseljeni": 2739,
+          "saldo": 2724
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 7205,
+          "odseljeni": 2349,
+          "saldo": 4856
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 7011,
+          "odseljeni": 2682,
+          "saldo": 4329
+        }
+      ],
+      "unutarnja_saldo": 454,
+      "ukupni_saldo_zadnja_godina": 4783,
+      "saldo_inozemstvo_zadnja": 4329
+    },
+    "KA": {
+      "naziv": "Karlovačka",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 287,
+          "odseljeni": 964,
+          "saldo": -677
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 421,
+          "odseljeni": 1194,
+          "saldo": -773
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 680,
+          "odseljeni": 994,
+          "saldo": -314
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 933,
+          "odseljeni": 1310,
+          "saldo": -377
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 1177,
+          "odseljeni": 988,
+          "saldo": 189
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 972,
+          "odseljeni": 1285,
+          "saldo": -313
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 1440,
+          "odseljeni": 1394,
+          "saldo": 46
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 1608,
+          "odseljeni": 1134,
+          "saldo": 474
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 1494,
+          "odseljeni": 1025,
+          "saldo": 469
+        }
+      ],
+      "unutarnja_saldo": -67,
+      "ukupni_saldo_zadnja_godina": 402,
+      "saldo_inozemstvo_zadnja": 469
+    },
+    "KR": {
+      "naziv": "Krapinsko-zagorska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 114,
+          "odseljeni": 625,
+          "saldo": -511
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 192,
+          "odseljeni": 593,
+          "saldo": -401
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 314,
+          "odseljeni": 619,
+          "saldo": -305
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 855,
+          "odseljeni": 633,
+          "saldo": 222
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 1046,
+          "odseljeni": 713,
+          "saldo": 333
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 1058,
+          "odseljeni": 1069,
+          "saldo": -11
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 1024,
+          "odseljeni": 1235,
+          "saldo": -211
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 1240,
+          "odseljeni": 750,
+          "saldo": 490
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 1563,
+          "odseljeni": 817,
+          "saldo": 746
+        }
+      ],
+      "unutarnja_saldo": 115,
+      "ukupni_saldo_zadnja_godina": 861,
+      "saldo_inozemstvo_zadnja": 746
+    },
+    "KZ": {
+      "naziv": "Koprivničko-križevačka",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 124,
+          "odseljeni": 886,
+          "saldo": -762
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 185,
+          "odseljeni": 989,
+          "saldo": -804
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 271,
+          "odseljeni": 827,
+          "saldo": -556
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 368,
+          "odseljeni": 748,
+          "saldo": -380
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 438,
+          "odseljeni": 502,
+          "saldo": -64
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 820,
+          "odseljeni": 641,
+          "saldo": 179
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 987,
+          "odseljeni": 946,
+          "saldo": 41
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 1223,
+          "odseljeni": 764,
+          "saldo": 459
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 1226,
+          "odseljeni": 945,
+          "saldo": 281
+        }
+      ],
+      "unutarnja_saldo": -27,
+      "ukupni_saldo_zadnja_godina": 254,
+      "saldo_inozemstvo_zadnja": 281
+    },
+    "LS": {
+      "naziv": "Ličko-senjska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 202,
+          "odseljeni": 419,
+          "saldo": -217
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 178,
+          "odseljeni": 608,
+          "saldo": -430
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 328,
+          "odseljeni": 443,
+          "saldo": -115
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 462,
+          "odseljeni": 424,
+          "saldo": 38
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 349,
+          "odseljeni": 359,
+          "saldo": -10
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 364,
+          "odseljeni": 431,
+          "saldo": -67
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 976,
+          "odseljeni": 517,
+          "saldo": 459
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 1231,
+          "odseljeni": 400,
+          "saldo": 831
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 1195,
+          "odseljeni": 435,
+          "saldo": 760
+        }
+      ],
+      "unutarnja_saldo": 52,
+      "ukupni_saldo_zadnja_godina": 812,
+      "saldo_inozemstvo_zadnja": 760
+    },
+    "ME": {
+      "naziv": "Međimurska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 163,
+          "odseljeni": 756,
+          "saldo": -593
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 203,
+          "odseljeni": 1187,
+          "saldo": -984
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 512,
+          "odseljeni": 1256,
+          "saldo": -744
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 867,
+          "odseljeni": 1088,
+          "saldo": -221
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 866,
+          "odseljeni": 1003,
+          "saldo": -137
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 1123,
+          "odseljeni": 1195,
+          "saldo": -72
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 1498,
+          "odseljeni": 1513,
+          "saldo": -15
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 1502,
+          "odseljeni": 1030,
+          "saldo": 472
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 1267,
+          "odseljeni": 885,
+          "saldo": 382
+        }
+      ],
+      "unutarnja_saldo": -105,
+      "ukupni_saldo_zadnja_godina": 277,
+      "saldo_inozemstvo_zadnja": 382
+    },
+    "OB": {
+      "naziv": "Osječko-baranjska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 522,
+          "odseljeni": 3634,
+          "saldo": -3112
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 598,
+          "odseljeni": 5094,
+          "saldo": -4496
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 879,
+          "odseljeni": 3635,
+          "saldo": -2756
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 1225,
+          "odseljeni": 3069,
+          "saldo": -1844
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 1328,
+          "odseljeni": 2032,
+          "saldo": -704
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 1267,
+          "odseljeni": 2242,
+          "saldo": -975
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 2108,
+          "odseljeni": 2715,
+          "saldo": -607
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 2323,
+          "odseljeni": 2370,
+          "saldo": -47
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 2193,
+          "odseljeni": 2206,
+          "saldo": -13
+        }
+      ],
+      "unutarnja_saldo": -301,
+      "ukupni_saldo_zadnja_godina": -314,
+      "saldo_inozemstvo_zadnja": -13
+    },
+    "PG": {
+      "naziv": "Primorsko-goranska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 1426,
+          "odseljeni": 2807,
+          "saldo": -1381
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 1479,
+          "odseljeni": 2962,
+          "saldo": -1483
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 2278,
+          "odseljeni": 2890,
+          "saldo": -612
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 2932,
+          "odseljeni": 2748,
+          "saldo": 184
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 2632,
+          "odseljeni": 2625,
+          "saldo": 7
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 2600,
+          "odseljeni": 3152,
+          "saldo": -552
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 4617,
+          "odseljeni": 3238,
+          "saldo": 1379
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 5761,
+          "odseljeni": 2756,
+          "saldo": 3005
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 5887,
+          "odseljeni": 2710,
+          "saldo": 3177
+        }
+      ],
+      "unutarnja_saldo": -30,
+      "ukupni_saldo_zadnja_godina": 3147,
+      "saldo_inozemstvo_zadnja": 3177
+    },
+    "PS": {
+      "naziv": "Požeško-slavonska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 125,
+          "odseljeni": 1238,
+          "saldo": -1113
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 166,
+          "odseljeni": 1564,
+          "saldo": -1398
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 299,
+          "odseljeni": 1172,
+          "saldo": -873
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 373,
+          "odseljeni": 1078,
+          "saldo": -705
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 375,
+          "odseljeni": 712,
+          "saldo": -337
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 451,
+          "odseljeni": 814,
+          "saldo": -363
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 547,
+          "odseljeni": 1070,
+          "saldo": -523
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 544,
+          "odseljeni": 951,
+          "saldo": -407
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 607,
+          "odseljeni": 775,
+          "saldo": -168
+        }
+      ],
+      "unutarnja_saldo": -146,
+      "ukupni_saldo_zadnja_godina": -314,
+      "saldo_inozemstvo_zadnja": -168
+    },
+    "SD": {
+      "naziv": "Splitsko-dalmatinska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 1959,
+          "odseljeni": 2617,
+          "saldo": -658
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 1984,
+          "odseljeni": 2992,
+          "saldo": -1008
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 2952,
+          "odseljeni": 2872,
+          "saldo": 80
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 4414,
+          "odseljeni": 2714,
+          "saldo": 1700
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 3209,
+          "odseljeni": 3265,
+          "saldo": -56
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 3582,
+          "odseljeni": 3421,
+          "saldo": 161
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 6822,
+          "odseljeni": 3974,
+          "saldo": 2848
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 8505,
+          "odseljeni": 3588,
+          "saldo": 4917
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 7966,
+          "odseljeni": 3254,
+          "saldo": 4712
+        }
+      ],
+      "unutarnja_saldo": -346,
+      "ukupni_saldo_zadnja_godina": 4366,
+      "saldo_inozemstvo_zadnja": 4712
+    },
+    "SK": {
+      "naziv": "Šibensko-kninska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 491,
+          "odseljeni": 999,
+          "saldo": -508
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 487,
+          "odseljeni": 1199,
+          "saldo": -712
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 770,
+          "odseljeni": 1033,
+          "saldo": -263
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 1185,
+          "odseljeni": 1125,
+          "saldo": 60
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 908,
+          "odseljeni": 1019,
+          "saldo": -111
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 972,
+          "odseljeni": 1093,
+          "saldo": -121
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 1520,
+          "odseljeni": 1271,
+          "saldo": 249
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 1897,
+          "odseljeni": 1133,
+          "saldo": 764
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 1918,
+          "odseljeni": 1191,
+          "saldo": 727
+        }
+      ],
+      "unutarnja_saldo": 250,
+      "ukupni_saldo_zadnja_godina": 977,
+      "saldo_inozemstvo_zadnja": 727
+    },
+    "SM": {
+      "naziv": "Sisačko-moslavačka",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 421,
+          "odseljeni": 2241,
+          "saldo": -1820
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 502,
+          "odseljeni": 3211,
+          "saldo": -2709
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 795,
+          "odseljeni": 2130,
+          "saldo": -1335
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 1068,
+          "odseljeni": 1904,
+          "saldo": -836
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 962,
+          "odseljeni": 1207,
+          "saldo": -245
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 1113,
+          "odseljeni": 1664,
+          "saldo": -551
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 1323,
+          "odseljeni": 1925,
+          "saldo": -602
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 1800,
+          "odseljeni": 1588,
+          "saldo": 212
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 2007,
+          "odseljeni": 1596,
+          "saldo": 411
+        }
+      ],
+      "unutarnja_saldo": -324,
+      "ukupni_saldo_zadnja_godina": 87,
+      "saldo_inozemstvo_zadnja": 411
+    },
+    "VK": {
+      "naziv": "Vukovarsko-srijemska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 494,
+          "odseljeni": 2763,
+          "saldo": -2269
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 447,
+          "odseljeni": 5091,
+          "saldo": -4644
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 820,
+          "odseljeni": 3001,
+          "saldo": -2181
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 1164,
+          "odseljeni": 2510,
+          "saldo": -1346
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 940,
+          "odseljeni": 1953,
+          "saldo": -1013
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 1074,
+          "odseljeni": 1940,
+          "saldo": -866
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 1492,
+          "odseljeni": 2373,
+          "saldo": -881
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 1645,
+          "odseljeni": 1858,
+          "saldo": -213
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 1714,
+          "odseljeni": 1565,
+          "saldo": 149
+        }
+      ],
+      "unutarnja_saldo": -523,
+      "ukupni_saldo_zadnja_godina": -374,
+      "saldo_inozemstvo_zadnja": 149
+    },
+    "VP": {
+      "naziv": "Virovitičko-podravska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 143,
+          "odseljeni": 941,
+          "saldo": -798
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 167,
+          "odseljeni": 1322,
+          "saldo": -1155
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 180,
+          "odseljeni": 1009,
+          "saldo": -829
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 268,
+          "odseljeni": 998,
+          "saldo": -730
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 258,
+          "odseljeni": 562,
+          "saldo": -304
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 278,
+          "odseljeni": 651,
+          "saldo": -373
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 454,
+          "odseljeni": 758,
+          "saldo": -304
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 458,
+          "odseljeni": 559,
+          "saldo": -101
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 572,
+          "odseljeni": 543,
+          "saldo": 29
+        }
+      ],
+      "unutarnja_saldo": -251,
+      "ukupni_saldo_zadnja_godina": -222,
+      "saldo_inozemstvo_zadnja": 29
+    },
+    "VZ": {
+      "naziv": "Varaždinska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 195,
+          "odseljeni": 1021,
+          "saldo": -826
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 343,
+          "odseljeni": 1346,
+          "saldo": -1003
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 718,
+          "odseljeni": 1172,
+          "saldo": -454
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 1408,
+          "odseljeni": 1384,
+          "saldo": 24
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 1206,
+          "odseljeni": 1182,
+          "saldo": 24
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 1356,
+          "odseljeni": 1501,
+          "saldo": -145
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 2223,
+          "odseljeni": 1656,
+          "saldo": 567
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 2841,
+          "odseljeni": 1323,
+          "saldo": 1518
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 2493,
+          "odseljeni": 1615,
+          "saldo": 878
+        }
+      ],
+      "unutarnja_saldo": -20,
+      "ukupni_saldo_zadnja_godina": 858,
+      "saldo_inozemstvo_zadnja": 878
+    },
+    "ZD": {
+      "naziv": "Zadarska",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 745,
+          "odseljeni": 1283,
+          "saldo": -538
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 732,
+          "odseljeni": 1367,
+          "saldo": -635
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 1289,
+          "odseljeni": 1370,
+          "saldo": -81
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 2145,
+          "odseljeni": 1917,
+          "saldo": 228
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 1818,
+          "odseljeni": 1629,
+          "saldo": 189
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 1922,
+          "odseljeni": 1935,
+          "saldo": -13
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 3443,
+          "odseljeni": 2114,
+          "saldo": 1329
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 4759,
+          "odseljeni": 1833,
+          "saldo": 2926
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 4579,
+          "odseljeni": 1996,
+          "saldo": 2583
+        }
+      ],
+      "unutarnja_saldo": 571,
+      "ukupni_saldo_zadnja_godina": 3154,
+      "saldo_inozemstvo_zadnja": 2583
+    },
+    "ZG": {
+      "naziv": "Grad Zagreb",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 3330,
+          "odseljeni": 4876,
+          "saldo": -1546
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 3715,
+          "odseljeni": 6814,
+          "saldo": -3099
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 6398,
+          "odseljeni": 6569,
+          "saldo": -171
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 7645,
+          "odseljeni": 7257,
+          "saldo": 388
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 6698,
+          "odseljeni": 6008,
+          "saldo": 690
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 8399,
+          "odseljeni": 7391,
+          "saldo": 1008
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 13628,
+          "odseljeni": 9026,
+          "saldo": 4602
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 14193,
+          "odseljeni": 8343,
+          "saldo": 5850
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 15306,
+          "odseljeni": 7856,
+          "saldo": 7450
+        }
+      ],
+      "unutarnja_saldo": -440,
+      "ukupni_saldo_zadnja_godina": 7010,
+      "saldo_inozemstvo_zadnja": 7450
+    },
+    "ZK": {
+      "naziv": "Zagrebačka",
+      "vanjska": [
+        {
+          "godina": 2016,
+          "doseljeni": 707,
+          "odseljeni": 2907,
+          "saldo": -2200
+        },
+        {
+          "godina": 2017,
+          "doseljeni": 830,
+          "odseljeni": 3201,
+          "saldo": -2371
+        },
+        {
+          "godina": 2018,
+          "doseljeni": 1741,
+          "odseljeni": 2828,
+          "saldo": -1087
+        },
+        {
+          "godina": 2019,
+          "doseljeni": 2934,
+          "odseljeni": 2941,
+          "saldo": -7
+        },
+        {
+          "godina": 2020,
+          "doseljeni": 2529,
+          "odseljeni": 2505,
+          "saldo": 24
+        },
+        {
+          "godina": 2021,
+          "doseljeni": 2967,
+          "odseljeni": 3125,
+          "saldo": -158
+        },
+        {
+          "godina": 2022,
+          "doseljeni": 4680,
+          "odseljeni": 3436,
+          "saldo": 1244
+        },
+        {
+          "godina": 2023,
+          "doseljeni": 5490,
+          "odseljeni": 3140,
+          "saldo": 2350
+        },
+        {
+          "godina": 2024,
+          "doseljeni": 5978,
+          "odseljeni": 3067,
+          "saldo": 2911
+        }
+      ],
+      "unutarnja_saldo": 1903,
+      "ukupni_saldo_zadnja_godina": 4814,
+      "saldo_inozemstvo_zadnja": 2911
+    }
+  }
+}

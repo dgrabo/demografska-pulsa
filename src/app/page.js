@@ -12,10 +12,12 @@ import chartStyles from '@/components/Charts/Charts.module.css';
 import OpcineList from '@/components/OpcineList/OpcineList';
 import SettlementSearch from '@/components/SettlementSearch/SettlementSearch';
 import AbandonedOverlay from '@/components/AbandonedOverlay/AbandonedOverlay';
+import MigrationToggle from '@/components/MigrationToggle/MigrationToggle';
 import { countAbandonedByCounty } from '@/lib/settlementUtils';
 import zupanije from '../../public/data/zupanije.json';
 import opcine from '../../public/data/opcine.json';
 import naselja from '../../public/data/naselja.json';
+import migracijeData from '../../public/data/migracije.json';
 import styles from './page.module.css';
 
 // Compute national totals from county data
@@ -65,12 +67,27 @@ export default function Home() {
   const [selectedCountyId, setSelectedCountyId] = useState(null);
   const [showOpcine, setShowOpcine] = useState(false);
   const [showAbandoned, setShowAbandoned] = useState(false);
+  const [showMigration, setShowMigration] = useState(false);
 
   const selectedCounty = selectedCountyId
     ? zupanije.find((z) => z.id === selectedCountyId)
     : null;
 
   const abandoned = useMemo(() => countAbandonedByCounty(naselja), []);
+
+  const migrationByCounty = useMemo(() => {
+    const m = {};
+    const pz = migracijeData.po_zupanijama;
+    for (const [id, d] of Object.entries(pz)) {
+      const latest = d.vanjska[d.vanjska.length - 1];
+      m[id] = {
+        saldo: d.ukupni_saldo_zadnja_godina,
+        doseljeni: latest ? latest.doseljeni : 0,
+        odseljeni: latest ? latest.odseljeni : 0,
+      };
+    }
+    return m;
+  }, []);
 
   return (
     <div className={styles.page}>
@@ -127,12 +144,18 @@ export default function Home() {
           onToggle={() => setShowAbandoned((prev) => !prev)}
         />
 
+        <MigrationToggle
+          isActive={showMigration}
+          onToggle={() => setShowMigration((prev) => !prev)}
+        />
+
         <div className={styles.mapLayout}>
           <MapWrapper
             zupanije={zupanije}
             selectedCountyId={selectedCountyId}
             onSelectCounty={setSelectedCountyId}
             abandonedByCounty={showAbandoned ? abandoned.counts : null}
+            migrationByCounty={showMigration ? migrationByCounty : null}
           />
           <CountyPanel
             county={selectedCounty}

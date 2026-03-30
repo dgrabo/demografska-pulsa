@@ -59,7 +59,7 @@ function getFeatureCentroid(feature) {
   return [sumLat / coords.length, sumLng / coords.length];
 }
 
-export default function CroatiaMap({ zupanije, selectedCountyId, onSelectCounty, abandonedByCounty, schoolByCounty, healthByCounty }) {
+export default function CroatiaMap({ zupanije, selectedCountyId, onSelectCounty, abandonedByCounty, schoolByCounty, healthByCounty, migrationByCounty }) {
   const [geojsonData, setGeojsonData] = useState(null);
   const geoJsonRef = useRef(null);
 
@@ -112,12 +112,16 @@ export default function CroatiaMap({ zupanije, selectedCountyId, onSelectCounty,
     const healthInfo = healthByCounty && healthByCounty[county.id]
       ? `<div class="county-tooltip-health">Pacijenti/liječnik: ${healthByCounty[county.id].pacijenti_po_doktoru.toLocaleString('hr-HR')}</div>`
       : '';
+    const migrationInfo = migrationByCounty && migrationByCounty[county.id]
+      ? `<div class="county-tooltip-migration">Neto migracija: ${migrationByCounty[county.id].saldo >= 0 ? '+' : ''}${migrationByCounty[county.id].saldo.toLocaleString('hr-HR')}</div>`
+      : '';
     const tooltipContent = `
       <div class="county-tooltip-name">${county.naziv}</div>
       <div class="county-tooltip-value">${county.pad_postotak.toLocaleString('hr-HR', { minimumFractionDigits: 1, maximumFractionDigits: 2 })}%</div>
       ${abandonedLine}
       ${schoolInfo}
       ${healthInfo}
+      ${migrationInfo}
     `;
     layer.bindTooltip(tooltipContent, {
       sticky: true,
@@ -146,7 +150,7 @@ export default function CroatiaMap({ zupanije, selectedCountyId, onSelectCounty,
   }
 
   // Force re-render of GeoJSON layer when selection or overlay changes
-  const geoJsonKey = `geojson-${selectedCountyId || 'none'}-${abandonedByCounty ? 'ab' : 'no'}-${schoolByCounty ? 'sc' : 'ns'}-${healthByCounty ? 'he' : 'nh'}`;
+  const geoJsonKey = `geojson-${selectedCountyId || 'none'}-${abandonedByCounty ? 'ab' : 'no'}-${schoolByCounty ? 'sc' : 'ns'}-${healthByCounty ? 'he' : 'nh'}-${migrationByCounty ? 'mi' : 'nm'}`;
 
   if (!geojsonData) {
     return (
@@ -287,6 +291,40 @@ export default function CroatiaMap({ zupanije, selectedCountyId, onSelectCounty,
                 </div>
                 <div className="county-tooltip-health" style={{ fontWeight: 700 }}>
                   Po liječniku: {ratio.toLocaleString('hr-HR')}
+                </div>
+              </Tooltip>
+            </CircleMarker>
+          );
+        })}
+        {/* Migration balance overlay */}
+        {migrationByCounty && geojsonData && geojsonData.features.map((feature) => {
+          const countyId = feature.properties.id;
+          const mig = migrationByCounty[countyId];
+          if (!mig) return null;
+          const center = getFeatureCentroid(feature);
+          if (!center) return null;
+          const saldo = mig.saldo;
+          const absSaldo = Math.abs(saldo);
+          const radius = Math.min(24, Math.max(8, 4 + Math.sqrt(absSaldo / 10)));
+          const isPositive = saldo >= 0;
+          return (
+            <CircleMarker
+              key={`migration-${countyId}`}
+              center={[center[0] - 0.05, center[1] - 0.05]}
+              radius={radius}
+              pathOptions={{
+                color: isPositive ? '#0e6e4e' : '#a32d2d',
+                fillColor: isPositive ? '#1d9e75' : '#e24b4a',
+                fillOpacity: 0.75,
+                weight: 2,
+              }}
+            >
+              <Tooltip direction="top" offset={[0, -radius]}>
+                <div className="county-tooltip-name">
+                  {dataMap.current[countyId]?.naziv || countyId}
+                </div>
+                <div className="county-tooltip-migration">
+                  Neto migracija: {saldo >= 0 ? '+' : ''}{saldo.toLocaleString('hr-HR')}
                 </div>
               </Tooltip>
             </CircleMarker>

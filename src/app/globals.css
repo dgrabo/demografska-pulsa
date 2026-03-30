@@ -92,3 +92,12 @@ a {
   font-size: 0.78rem;
   margin-top: 2px;
 }
+
+.county-tooltip-migration {
+  color: #145a3e;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: 3px;
+  padding-top: 3px;
+  border-top: 1px solid var(--color-border);
+}

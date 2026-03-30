@@ -25,8 +25,7 @@ export default function MirovinePage() {
         <Link href="/" className={styles.backLink}>&larr; Natrag na početnu</Link>
         <h1 className={styles.pageTitle}>Održivost mirovinskog sustava</h1>
         <p className={styles.pageSubtitle}>
-          Koliko radnika financira jednog umirovljenika u vašoj županiji — i što to
-          znači za budućnost?
+          Stvarni podatci o korisnicima mirovina iz HZMO-a i dobna struktura iz Popisa 2021.
         </p>
 
         <PensionOverview />
@@ -39,7 +38,7 @@ export default function MirovinePage() {
         )}
 
         <p className={styles.source}>
-          Izvori: HZMO godišnje izvješće &middot; DZS Popis stanovništva 2021. &middot; Eurostat &middot; CC BY 4.0
+          Izvori: HZMO mjesečna izvješća (pros. 2021., pros. 2025., sij. 2026.) &middot; DZS Popis stanovništva 2021. &middot; CC BY 4.0
         </p>
       </main>
     </div>

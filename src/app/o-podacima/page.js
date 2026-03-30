@@ -167,17 +167,6 @@ export default function OPodacimaPage() {
               </code>
             </div>
             <div className={styles.methodCard}>
-              <h3>Omjer radnika i umirovljenika</h3>
-              <p>
-                Broj zaposlenih osoba po jednom umirovljeniku u županiji. Temelji se na
-                podatcima HZMO-a. Vrijednost ispod 1,0 znači da ima više umirovljenika
-                nego radnika.
-              </p>
-              <code className={styles.formula}>
-                omjer = broj_zaposlenih / broj_umirovljenika
-              </code>
-            </div>
-            <div className={styles.methodCard}>
               <h3>Rizik kolapsa javnih usluga</h3>
               <p>
                 Kompozitni indeks (0–100) koji kombinira tri normalizirane

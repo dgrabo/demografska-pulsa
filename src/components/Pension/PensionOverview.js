@@ -2,39 +2,45 @@
 
 import { useEffect, useRef } from 'react';
 import { Chart, registerables } from 'chart.js';
-import { PENSION_HISTORY, NATIONAL_RATIO, EU_AVERAGE_RATIO } from '@/lib/pensionData';
-import { formatRatio } from '@/lib/dataUtils';
+import {
+  PENSIONER_TOTALS,
+  PENSION_TYPE_BREAKDOWN,
+  PENSION_LAW_BREAKDOWN,
+  PENSIONER_CHANGE,
+} from '@/lib/pensionData';
+import { formatNumber } from '@/lib/dataUtils';
 import styles from './PensionOverview.module.css';
 
 Chart.register(...registerables);
 
 export default function PensionOverview() {
-  const chartRef = useRef(null);
-  const chartInstance = useRef(null);
+  const trendRef = useRef(null);
+  const trendInstance = useRef(null);
+  const typeRef = useRef(null);
+  const typeInstance = useRef(null);
 
+  // Trend chart: Dec 2021 vs Dec 2025 vs Jan 2026 (real data points)
   useEffect(() => {
-    if (!chartRef.current) return;
+    if (!trendRef.current) return;
 
-    if (chartInstance.current) {
-      chartInstance.current.destroy();
-    }
+    if (trendInstance.current) trendInstance.current.destroy();
 
-    const ctx = chartRef.current.getContext('2d');
-    chartInstance.current = new Chart(ctx, {
-      type: 'line',
+    const periods = ['2021-12', '2025-12', '2026-01'];
+    const labels = periods.map((p) => PENSIONER_TOTALS[p].label);
+    const values = periods.map((p) => PENSIONER_TOTALS[p].ukupno);
+
+    const ctx = trendRef.current.getContext('2d');
+    trendInstance.current = new Chart(ctx, {
+      type: 'bar',
       data: {
-        labels: PENSION_HISTORY.map((d) => d.godina),
+        labels,
         datasets: [
           {
-            label: 'Omjer radnika i umirovljenika',
-            data: PENSION_HISTORY.map((d) => d.omjer),
-            borderColor: '#e24b4a',
-            backgroundColor: 'rgba(226, 75, 74, 0.1)',
-            fill: true,
-            tension: 0.3,
-            pointRadius: 5,
-            pointBackgroundColor: '#e24b4a',
-            borderWidth: 2,
+            label: 'Ukupno korisnika mirovina',
+            data: values,
+            backgroundColor: ['#e24b4a', '#ba7517', '#ba7517'],
+            borderRadius: 6,
+            barThickness: 48,
           },
         ],
       },
@@ -45,17 +51,17 @@ export default function PensionOverview() {
           legend: { display: false },
           tooltip: {
             callbacks: {
-              label: (ctx) => `${ctx.parsed.y.toFixed(2)} : 1`,
+              label: (context) => formatNumber(context.parsed.y) + ' korisnika',
             },
           },
         },
         scales: {
           y: {
             beginAtZero: false,
-            min: 0.5,
-            max: 3.0,
+            min: 1200000,
+            max: 1250000,
             ticks: {
-              callback: (v) => `${v.toFixed(1)} : 1`,
+              callback: (v) => (v / 1000000).toFixed(2) + 'M',
               font: { size: 11 },
             },
             grid: { color: 'rgba(0,0,0,0.06)' },
@@ -69,38 +75,103 @@ export default function PensionOverview() {
     });
 
     return () => {
-      if (chartInstance.current) {
-        chartInstance.current.destroy();
-      }
+      if (trendInstance.current) trendInstance.current.destroy();
     };
   }, []);
 
-  const changeSince2011 = ((NATIONAL_RATIO - 1.28) / 1.28 * 100).toFixed(1);
+  // Doughnut: pension type breakdown (ZOMO)
+  useEffect(() => {
+    if (!typeRef.current) return;
+
+    if (typeInstance.current) typeInstance.current.destroy();
+
+    const ctx = typeRef.current.getContext('2d');
+    typeInstance.current = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: PENSION_TYPE_BREAKDOWN.map((t) => t.tip),
+        datasets: [
+          {
+            data: PENSION_TYPE_BREAKDOWN.map((t) => t.broj),
+            backgroundColor: ['#e24b4a', '#ba7517', '#2e86c1'],
+            borderWidth: 2,
+            borderColor: '#fff',
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: {
+            position: 'bottom',
+            labels: { font: { size: 11 }, padding: 12 },
+          },
+          tooltip: {
+            callbacks: {
+              label: (context) => {
+                const t = PENSION_TYPE_BREAKDOWN[context.dataIndex];
+                return `${t.tip}: ${formatNumber(t.broj)} (${t.postotak}%)`;
+              },
+            },
+          },
+        },
+      },
+    });
+
+    return () => {
+      if (typeInstance.current) typeInstance.current.destroy();
+    };
+  }, []);
+
+  const latest = PENSIONER_TOTALS['2026-01'];
 
   return (
     <section className={styles.overview}>
       <div className={styles.cards}>
         <div className={styles.card}>
-          <span className={styles.cardLabel}>Trenutni omjer (Hrvatska)</span>
-          <span className={styles.cardValue}>{formatRatio(NATIONAL_RATIO)}</span>
-          <span className={styles.cardContext}>radnika po umirovljeniku</span>
+          <span className={styles.cardLabel}>Ukupno umirovljenika (sij. 2026.)</span>
+          <span className={styles.cardValue}>{formatNumber(latest.ukupno)}</span>
+          <span className={styles.cardContext}>svi zakoni (ZOMO + ZOHBDR + DVO + HVO)</span>
         </div>
         <div className={styles.card}>
-          <span className={styles.cardLabel}>Promjena od 2011.</span>
-          <span className={`${styles.cardValue} ${styles.negative}`}>{changeSince2011}%</span>
-          <span className={styles.cardContext}>pad omjera radnika</span>
+          <span className={styles.cardLabel}>Promjena od prosinca 2021.</span>
+          <span className={`${styles.cardValue} ${styles.positive}`}>
+            {formatNumber(PENSIONER_CHANGE.apsolutno)}
+          </span>
+          <span className={styles.cardContext}>{PENSIONER_CHANGE.postotak.toFixed(2)}% korisnika mirovina</span>
         </div>
         <div className={styles.card}>
-          <span className={styles.cardLabel}>Prosjek EU</span>
-          <span className={`${styles.cardValue} ${styles.positive}`}>{formatRatio(EU_AVERAGE_RATIO)}</span>
-          <span className={styles.cardContext}>radnika po umirovljeniku</span>
+          <span className={styles.cardLabel}>ZOMO (redovne mirovine)</span>
+          <span className={styles.cardValue}>{formatNumber(latest.zomo)}</span>
+          <span className={styles.cardContext}>
+            {(latest.zomo / latest.ukupno * 100).toFixed(1)}% svih korisnika
+          </span>
         </div>
       </div>
 
-      <div className={styles.chartSection}>
-        <h3 className={styles.chartTitle}>Kretanje omjera radnika i umirovljenika (1991. — 2021.)</h3>
-        <div className={styles.chartContainer}>
-          <canvas ref={chartRef} />
+      <div className={styles.charts}>
+        <div className={styles.chartSection}>
+          <h3 className={styles.chartTitle}>
+            Broj korisnika mirovina (HZMO podatci)
+          </h3>
+          <div className={styles.chartContainer}>
+            <canvas ref={trendRef} />
+          </div>
+        </div>
+
+        <div className={styles.chartSection}>
+          <h3 className={styles.chartTitle}>
+            Struktura mirovina po vrsti — ZOMO (sij. 2026.)
+          </h3>
+          <div className={styles.chartContainerSmall}>
+            <canvas ref={typeRef} />
+          </div>
+          <div className={styles.typeDetails}>
+            {PENSION_LAW_BREAKDOWN.map((l) => (
+              <span key={l.zakon}>{l.zakon}: {formatNumber(l.broj)}</span>
+            ))}
+          </div>
         </div>
       </div>
     </section>

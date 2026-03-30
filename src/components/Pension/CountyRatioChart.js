@@ -2,16 +2,15 @@
 
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { Chart, registerables } from 'chart.js';
-import { getCountyTrend } from '@/lib/pensionData';
-import { formatRatio } from '@/lib/dataUtils';
+import { formatNumber } from '@/lib/dataUtils';
 import styles from './CountyRatioChart.module.css';
 
 Chart.register(...registerables);
 
 function getBarColor(value) {
-  if (value >= 1.3) return '#1d9e75';
-  if (value >= 1.0) return '#ba7517';
-  return '#e24b4a';
+  if (value >= 0.55) return '#e24b4a';
+  if (value >= 0.50) return '#ba7517';
+  return '#1d9e75';
 }
 
 export default function CountyRatioChart({ zupanije }) {
@@ -21,7 +20,7 @@ export default function CountyRatioChart({ zupanije }) {
 
   const sorted = useMemo(
     () => [...zupanije].sort(
-      (a, b) => a.omjer_radnici_umirovljenici - b.omjer_radnici_umirovljenici
+      (a, b) => b.koeficijent_ovisnosti - a.koeficijent_ovisnosti
     ),
     [zupanije]
   );
@@ -34,7 +33,7 @@ export default function CountyRatioChart({ zupanije }) {
     }
 
     const labels = sorted.map((z) => z.naziv);
-    const values = sorted.map((z) => z.omjer_radnici_umirovljenici);
+    const values = sorted.map((z) => z.koeficijent_ovisnosti);
     const colors = values.map(getBarColor);
 
     const ctx = chartRef.current.getContext('2d');
@@ -44,7 +43,7 @@ export default function CountyRatioChart({ zupanije }) {
         labels,
         datasets: [
           {
-            label: 'Omjer radnika i umirovljenika',
+            label: 'Koeficijent ovisnosti',
             data: values,
             backgroundColor: colors,
             borderRadius: 4,
@@ -66,16 +65,16 @@ export default function CountyRatioChart({ zupanije }) {
           legend: { display: false },
           tooltip: {
             callbacks: {
-              label: (ctx) => `${ctx.parsed.x.toFixed(2)} : 1`,
+              label: (ctx) => `Koef. ovisnosti: ${ctx.parsed.x.toFixed(2)}`,
             },
           },
         },
         scales: {
           x: {
             beginAtZero: true,
-            max: 1.8,
+            max: 0.75,
             ticks: {
-              callback: (v) => `${v.toFixed(1)}`,
+              callback: (v) => v.toFixed(2),
               font: { size: 11 },
             },
             grid: { color: 'rgba(0,0,0,0.06)' },
@@ -95,15 +94,12 @@ export default function CountyRatioChart({ zupanije }) {
     };
   }, [sorted]);
 
-  const trend = selectedCounty
-    ? getCountyTrend(selectedCounty.omjer_radnici_umirovljenici)
-    : null;
-
   return (
     <section className={styles.section}>
-      <h2 className={styles.title}>Omjer radnika i umirovljenika po županijama</h2>
+      <h2 className={styles.title}>Koeficijent dobne ovisnosti po županijama</h2>
       <p className={styles.subtitle}>
-        Kliknite na županiju za detalje. Zeleno: &ge;1,3 | Narančasto: 1,0–1,3 | Crveno: &lt;1,0
+        Omjer uzdržavanog (0-14 i 65+) i radno sposobnog (15-64) stanovništva.
+        Kliknite na županiju za detalje. Crveno: &ge;0,55 | Narančasto: 0,50-0,55 | Zeleno: &lt;0,50
       </p>
 
       <div className={styles.layout}>
@@ -111,45 +107,59 @@ export default function CountyRatioChart({ zupanije }) {
           <canvas ref={chartRef} />
         </div>
 
-        {selectedCounty && trend && (
+        {selectedCounty && (
           <div className={styles.detail}>
             <h3 className={styles.detailName}>{selectedCounty.naziv}</h3>
             <div className={styles.detailGrid}>
               <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>Trenutni omjer</span>
-                <span
-                  className={styles.detailValue}
-                  style={{ color: getBarColor(selectedCounty.omjer_radnici_umirovljenici) }}
-                >
-                  {formatRatio(selectedCounty.omjer_radnici_umirovljenici)}
-                </span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>Omjer 2011.</span>
-                <span className={styles.detailValue}>{formatRatio(trend.ratio2011)}</span>
-              </div>
-              <div className={styles.detailItem}>
-                <span className={styles.detailLabel}>Projekcija 2035.</span>
-                <span
-                  className={styles.detailValue}
-                  style={{ color: getBarColor(trend.ratio2035) }}
-                >
-                  {formatRatio(trend.ratio2035)}
-                </span>
-              </div>
-              <div className={styles.detailItem}>
                 <span className={styles.detailLabel}>Koef. ovisnosti</span>
-                <span className={styles.detailValue}>
+                <span
+                  className={styles.detailValue}
+                  style={{ color: getBarColor(selectedCounty.koeficijent_ovisnosti) }}
+                >
                   {selectedCounty.koeficijent_ovisnosti.toFixed(2)}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Stanovništvo 2021.</span>
+                <span className={styles.detailValue}>
+                  {formatNumber(selectedCounty.stanovnistvo_2021)}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Udio 65+</span>
+                <span className={styles.detailValue}>
+                  {selectedCounty.stari_65plus_postotak}%
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Udio 0-14</span>
+                <span className={styles.detailValue}>
+                  {selectedCounty.mladi_0_14_postotak}%
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Indeks starenja</span>
+                <span className={styles.detailValue}>
+                  {selectedCounty.indeks_starenja}
+                </span>
+              </div>
+              <div className={styles.detailItem}>
+                <span className={styles.detailLabel}>Pad stanovništva</span>
+                <span className={styles.detailValue} style={{ color: '#e24b4a' }}>
+                  {selectedCounty.pad_postotak.toFixed(1)}%
                 </span>
               </div>
             </div>
             <p className={styles.detailContext}>
-              {trend.ratio2035 < 0.8
-                ? `Prema trenutnim trendovima, do 2035. u ovoj će županiji manje od 0,8 radnika financirati svakog umirovljenika — sustav postaje neodrživ bez reformi.`
-                : trend.ratio2035 < 1.0
-                  ? `Do 2035. manje od jednog radnika po umirovljeniku — značajan pritisak na mirovinski sustav.`
-                  : `Omjer ostaje iznad 1:1, ali nastavlja padati. Potrebne su mjere za zadržavanje radne snage.`}
+              {selectedCounty.koeficijent_ovisnosti >= 0.55
+                ? `Više od 55% stanovništva čine uzdržavane dobne skupine (mladi i stariji). To znači ogroman pritisak na radno sposobno stanovništvo i mirovinski sustav.`
+                : selectedCounty.koeficijent_ovisnosti >= 0.50
+                  ? `Oko polovice stanovništva pripada uzdržavanim dobnim skupinama. Udio starijih raste, što povećava opterećenje mirovinskog sustava.`
+                  : `Relativno povoljniji omjer, ali i dalje pod pritiskom demografskih trendova. Udio radno sposobnih opada.`}
+            </p>
+            <p className={styles.detailNote}>
+              Izvor: DZS, Popis stanovništva 2021.
             </p>
             <button
               className={styles.detailClose}

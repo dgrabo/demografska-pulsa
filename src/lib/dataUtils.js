@@ -17,15 +17,3 @@ export function formatPercent(value) {
   });
   return value > 0 ? `+${formatted}%` : `${formatted}%`;
 }
-
-/**
- * Format a ratio value for display.
- * Example: 1.18 → "1,18 : 1"
- */
-export function formatRatio(value) {
-  const formatted = value.toLocaleString('hr-HR', {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  });
-  return `${formatted} : 1`;
-}

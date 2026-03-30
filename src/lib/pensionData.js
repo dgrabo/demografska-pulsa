@@ -1,96 +1,75 @@
 /**
- * Static pension system data for the /mirovine page.
- * Sources: HZMO annual reports, DZS census data, Eurostat.
+ * Pension system data for the /mirovine page.
+ *
+ * ALL data comes from real sources:
+ *   - HZMO monthly reports: "Korisnici mirovina" (Dec 2021, Dec 2025, Jan 2026)
+ *     Files: korisnici-mirovina-01-2022-za-12-2021.xlsx,
+ *            korisnici-mirovina-1-2026-za-12-2025.xlsx,
+ *            korisnici-mirovina-2-2026-za-1-2026.xlsx
+ *   - DZS Census 2021: age structure per county (koeficijent_ovisnosti)
+ *
+ * County-level worker-to-pensioner ratios are NOT available from these sources
+ * and are therefore NOT included.
  */
 
-/** National worker-to-pensioner ratio trend (HZMO data) */
-export const PENSION_HISTORY = [
-  { godina: 1991, omjer: 2.59 },
-  { godina: 2001, omjer: 1.68 },
-  { godina: 2011, omjer: 1.28 },
-  { godina: 2021, omjer: 1.18 },
+// ---------------------------------------------------------------------------
+// Real HZMO data — national pensioner counts
+// ---------------------------------------------------------------------------
+
+export const PENSIONER_TOTALS = {
+  '2021-12': {
+    label: 'Prosinac 2021.',
+    zomo: 1139096,
+    dvo: 15881,
+    zohbdr: 70836,
+    hvo: 6788,
+    ukupno: 1232601,
+  },
+  '2025-12': {
+    label: 'Prosinac 2025.',
+    zomo: 1132070,
+    dvo: 16278,
+    zohbdr: 72519,
+    hvo: 7880,
+    ukupno: 1228747,
+  },
+  '2026-01': {
+    label: 'Siječanj 2026.',
+    zomo: 1132830,
+    dvo: 16240,
+    zohbdr: 72420,
+    hvo: 7944,
+    ukupno: 1229434,
+  },
+};
+
+/** Pension type breakdown for Jan 2026 (ZOMO only — col 2 from Sheet 1) */
+export const PENSION_TYPE_BREAKDOWN = [
+  { tip: 'Starosna', broj: 859494, postotak: 69.9 },
+  { tip: 'Invalidska', broj: 86242, postotak: 7.0 },
+  { tip: 'Obiteljska', broj: 187094, postotak: 15.2 },
 ];
 
-/** Current national average */
-export const NATIONAL_RATIO = 1.18;
-
-/** EU average for comparison (Eurostat, ~2021) */
-export const EU_AVERAGE_RATIO = 1.85;
-
-/** Projected national ratios by scenario (aligned with projectionData.js scenarios) */
-const NATIONAL_PROJECTIONS = [
-  // Scenario 0: Eurostat baseline
-  { godina: 2025, omjer: 1.14 },
-  { godina: 2030, omjer: 1.05 },
-  { godina: 2035, omjer: 0.95 },
-  { godina: 2040, omjer: 0.87 },
-  { godina: 2050, omjer: 0.75 },
+/** Pension law breakdown for Jan 2026 (all 4 laws) */
+export const PENSION_LAW_BREAKDOWN = [
+  { zakon: 'ZOMO', naziv: 'Zakon o mirovinskom osiguranju', broj: 1132830 },
+  { zakon: 'ZOHBDR', naziv: 'Zakon o hrvatskim braniteljima', broj: 72420 },
+  { zakon: 'DVO', naziv: 'Djelatne vojne osobe / policija', broj: 16240 },
+  { zakon: 'HVO', naziv: 'Hrvatsko vijeće obrane (BiH)', broj: 7944 },
 ];
 
-/**
- * Calculate projected worker-to-pensioner ratio for a county at a given year.
- * Uses the county's current ratio and scales it by the national projection trend.
- */
-export function getCountyProjection(countyRatio, targetYear) {
-  if (targetYear <= 2021) return countyRatio;
-
-  // Linear interpolation between known projection points
-  const points = NATIONAL_PROJECTIONS;
-  let factor = 1;
-
-  if (targetYear >= 2050) {
-    factor = points[points.length - 1].omjer / NATIONAL_RATIO;
-  } else {
-    // Find bracketing points
-    for (let i = 0; i < points.length - 1; i++) {
-      if (targetYear >= points[i].godina && targetYear <= points[i + 1].godina) {
-        const t = (targetYear - points[i].godina) / (points[i + 1].godina - points[i].godina);
-        const interpolated = points[i].omjer + t * (points[i + 1].omjer - points[i].omjer);
-        factor = interpolated / NATIONAL_RATIO;
-        break;
-      }
-    }
-    // Before first projection point
-    if (targetYear < points[0].godina) {
-      const t = (targetYear - 2021) / (points[0].godina - 2021);
-      const interpolated = NATIONAL_RATIO + t * (points[0].omjer - NATIONAL_RATIO);
-      factor = interpolated / NATIONAL_RATIO;
-    }
-  }
-
-  return Math.max(0.3, countyRatio * factor);
-}
+/** Change in total pensioners: Dec 2021 → Jan 2026 */
+export const PENSIONER_CHANGE = {
+  od: '2021-12',
+  do: '2026-01',
+  apsolutno: 1229434 - 1232601,
+  postotak: (1229434 - 1232601) / 1232601 * 100,
+};
 
 /**
- * Calculate retirement projection for the personal calculator.
- * @param {number} age - User's current age (20-60)
- * @param {number} countyRatio - Current worker-to-pensioner ratio for the county
- * @returns {{ retirementYear: number, projectedRatio: number, currentRatio: number }}
+ * National dependency ratio from DZS census 2021.
+ * Calculated from national age structure:
+ *   (0-14: 14.6% + 65+: 22.4%) / (15-64: 63.0%) = 0.587
+ * Source: DZS Popis 2021, dobna struktura.
  */
-export function calculateRetirementProjection(age, countyRatio) {
-  const currentYear = 2026;
-  const retirementAge = 65;
-  const retirementYear = currentYear + (retirementAge - age);
-
-  const projectedRatio = getCountyProjection(countyRatio, retirementYear);
-
-  return {
-    retirementYear,
-    projectedRatio: Math.round(projectedRatio * 100) / 100,
-    currentRatio: countyRatio,
-  };
-}
-
-/** County-level projected ratios for the detail panel (2011, 2021, 2035) */
-export function getCountyTrend(countyRatio) {
-  // Estimate 2011 ratio by reversing the national trend
-  const factor2011 = 1.28 / NATIONAL_RATIO;
-  const ratio2011 = Math.round(countyRatio * factor2011 * 100) / 100;
-  const ratio2035 = Math.round(getCountyProjection(countyRatio, 2035) * 100) / 100;
-
-  return {
-    ratio2011,
-    ratio2021: countyRatio,
-    ratio2035,
-  };
-}
+export const NATIONAL_DEPENDENCY_RATIO = 0.59;

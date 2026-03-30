@@ -3,7 +3,7 @@ import "./globals.css";
 export const metadata = {
   metadataBase: new URL('https://demografska-pulsa.vercel.app'),
   title: {
-    default: 'DemografskaPulsa — Demografska slika Hrvatske',
+    default: 'DemografskaPulsa - Demografska slika Hrvatske',
     template: '%s | DemografskaPulsa',
   },
   description:
@@ -14,7 +14,7 @@ export const metadata = {
   ],
   authors: [{ name: 'DemografskaPulsa' }],
   openGraph: {
-    title: 'DemografskaPulsa — Demografska slika Hrvatske',
+    title: 'DemografskaPulsa - Demografska slika Hrvatske',
     description:
       'Interaktivna vizualizacija demografskih podataka Republike Hrvatske. Popis 2021., trendovi, projekcije do 2050.',
     url: 'https://demografska-pulsa.vercel.app',
@@ -24,7 +24,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DemografskaPulsa — Demografska slika Hrvatske',
+    title: 'DemografskaPulsa - Demografska slika Hrvatske',
     description:
       'Interaktivna vizualizacija demografskih podataka Republike Hrvatske.',
   },

@@ -96,8 +96,8 @@ export default function ComparisonTable({ areaA, areaB }) {
             {metrics.map((m) => {
               const a = areaA[m.key];
               const b = areaB[m.key];
-              const aVal = a != null ? m.format(a) : '—';
-              const bVal = b != null ? m.format(b) : '—';
+              const aVal = a != null ? m.format(a) : '-';
+              const bVal = b != null ? m.format(b) : '-';
 
               let aClass = '';
               let bClass = '';

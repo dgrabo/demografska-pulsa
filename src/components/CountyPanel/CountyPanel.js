@@ -43,7 +43,7 @@ export default function CountyPanel({ county, onClose, onViewMunicipalities }) {
         {formatPercent(county.pad_postotak)}
       </div>
       <div className={styles.declineLabel}>
-        Promjena stanovništva 2011. — 2021.
+        Promjena stanovništva 2011.-2021.
       </div>
 
       <div className={styles.statsGrid}>
@@ -81,7 +81,7 @@ export default function CountyPanel({ county, onClose, onViewMunicipalities }) {
           </span>
         </div>
         <div className={styles.statItem}>
-          <span className={styles.statLabel}>Udio 0–14</span>
+          <span className={styles.statLabel}>Udio 0-14</span>
           <span className={styles.statValue}>
             {county.mladi_0_14_postotak}%
           </span>

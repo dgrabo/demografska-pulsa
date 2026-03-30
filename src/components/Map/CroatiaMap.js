@@ -24,9 +24,9 @@ function getColor(padPostotak) {
 
 const LEGEND_ITEMS = [
   { color: '#fef0f0', label: 'Pad < 5%' },
-  { color: '#f09595', label: '5% – 10%' },
-  { color: '#e24b4a', label: '10% – 15%' },
-  { color: '#a32d2d', label: '15% – 20%' },
+  { color: '#f09595', label: '5% - 10%' },
+  { color: '#e24b4a', label: '10% - 15%' },
+  { color: '#a32d2d', label: '15% - 20%' },
   { color: '#501313', label: 'Pad > 20%' },
 ];
 
@@ -133,7 +133,6 @@ export default function CroatiaMap({ zupanije, selectedCountyId, onSelectCounty,
           weight: 3,
           color: '#ba7517',
         });
-        l.bringToFront();
       },
       mouseout: (e) => {
         if (geoJsonRef.current) {

@@ -162,7 +162,7 @@ export default function OpcineList({ countyId, countyName, opcine, onClose }) {
                       <span className={styles.detailValue}>{o.stari_65plus_postotak}%</span>
                     </div>
                     <div className={styles.detailItem}>
-                      <span className={styles.detailLabel}>Udio 0–14</span>
+                      <span className={styles.detailLabel}>Udio 0-14</span>
                       <span className={styles.detailValue}>{o.mladi_0_14_postotak}%</span>
                     </div>
                     <div className={styles.detailItem}>

@@ -36,7 +36,7 @@ export default function OPodacimaPage() {
               </a>
             </li>
             <li>
-              <strong>Popis stanovništva 2011.</strong> — DZS. Koristi se za usporedbu s
+              <strong>Popis stanovništva 2011.</strong> - DZS. Koristi se za usporedbu s
               popisom 2021. i izračun pada stanovništva.{' '}
               <a
                 href="https://web.dzs.hr/Hrv/censuses/census2011/results/censustabshtm.htm"
@@ -48,7 +48,7 @@ export default function OPodacimaPage() {
               </a>
             </li>
             <li>
-              <strong>Strategija demografske revitalizacije do 2033.</strong> — Narodne novine
+              <strong>Strategija demografske revitalizacije do 2033.</strong> - Narodne novine
               36/2024. Sadrži projekcije stanovništva do 2050. po četiri scenarija.{' '}
               <a
                 href="https://narodne-novine.nn.hr/clanci/sluzbeni/2024_03_36_581.html"
@@ -60,7 +60,7 @@ export default function OPodacimaPage() {
               </a>
             </li>
             <li>
-              <strong>Obrazovna statistika 2024./2025.</strong> — DZS, tablica T2.2 (broj učenika
+              <strong>Obrazovna statistika 2024./2025.</strong> - DZS, tablica T2.2 (broj učenika
               u osnovnim školama po županijama). Uspoređuje se s podatcima za 2010./2011. za
               izračun pada upisa.{' '}
               <a
@@ -111,13 +111,13 @@ export default function OPodacimaPage() {
                 godine. Relativni pad (postotak) izračunava se formulom:
               </p>
               <code className={styles.formula}>
-                pad_% = ((stanovnistvo_2021 - stanovnistvo_2011) / stanovnistvo_2011) × 100
+                pad_% = ((stanovnistvo_2021 - stanovnistvo_2011) / stanovnistvo_2011) * 100
               </code>
             </div>
             <div className={styles.methodCard}>
               <h3>Indeks starenja</h3>
               <p>
-                Omjer broja starijih (65+) i mladih (0–14). Vrijednost iznad 1.0 znači da
+                Omjer broja starijih (65+) i mladih (0-14). Vrijednost iznad 1.0 znači da
                 ima više starijih od mladih.
               </p>
               <code className={styles.formula}>
@@ -142,7 +142,7 @@ export default function OPodacimaPage() {
                 kao rizične za zatvaranje škola.
               </p>
               <code className={styles.formula}>
-                pad_ucenika_% = ((ucenici_2024 - ucenici_2010) / ucenici_2010) × 100
+                pad_ucenika_% = ((ucenici_2024 - ucenici_2010) / ucenici_2010) * 100
               </code>
             </div>
             <div className={styles.methodCard}>
@@ -159,7 +159,7 @@ export default function OPodacimaPage() {
             <div className={styles.methodCard}>
               <h3>Koeficijent ovisnosti</h3>
               <p>
-                Omjer uzdržavanog (0–14 i 65+) i radno sposobnog stanovništva (15–64).
+                Omjer uzdržavanog (0-14 i 65+) i radno sposobnog stanovništva (15-64).
                 Viša vrijednost znači veći udio uzdržavanih osoba.
               </p>
               <code className={styles.formula}>
@@ -169,12 +169,12 @@ export default function OPodacimaPage() {
             <div className={styles.methodCard}>
               <h3>Rizik kolapsa javnih usluga</h3>
               <p>
-                Kompozitni indeks (0–100) koji kombinira tri normalizirane
+                Kompozitni indeks (0-100) koji kombinira tri normalizirane
                 komponente: demografski pad (40%), pad učenika (30%) i opterećenost
                 liječnika (30%). Viši rezultat znači veći rizik.
               </p>
               <code className={styles.formula}>
-                rizik = demo_norm × 0.4 + škola_norm × 0.3 + zdravlje_norm × 0.3
+                rizik = demo_norm * 0.4 + škola_norm * 0.3 + zdravlje_norm * 0.3
               </code>
             </div>
           </div>

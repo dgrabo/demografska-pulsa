@@ -104,7 +104,7 @@ export default async function NaseljePage({ params }) {
                   width: `${naselje.mladi_pct}%`,
                   background: 'var(--color-positive)',
                 }}
-                title={`0–14: ${naselje.mladi_pct}%`}
+                title={`0-14: ${naselje.mladi_pct}%`}
               />
               <div
                 className={styles.ageSegment}
@@ -112,7 +112,7 @@ export default async function NaseljePage({ params }) {
                   width: `${naselje.radni_pct}%`,
                   background: 'var(--color-warning)',
                 }}
-                title={`15–64: ${naselje.radni_pct}%`}
+                title={`15-64: ${naselje.radni_pct}%`}
               />
               <div
                 className={styles.ageSegment}
@@ -129,14 +129,14 @@ export default async function NaseljePage({ params }) {
                   className={styles.ageLegendDot}
                   style={{ background: 'var(--color-positive)' }}
                 />
-                0–14: {naselje.mladi_pct}%
+                0-14: {naselje.mladi_pct}%
               </span>
               <span className={styles.ageLegendItem}>
                 <span
                   className={styles.ageLegendDot}
                   style={{ background: 'var(--color-warning)' }}
                 />
-                15–64: {naselje.radni_pct}%
+                15-64: {naselje.radni_pct}%
               </span>
               <span className={styles.ageLegendItem}>
                 <span

@@ -14,14 +14,14 @@ import styles from './Charts.module.css';
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 // 2011 national age percentages (DZS Census 2011)
-const data2011 = { '0–14': 15.2, '15–64': 67.1, '65+': 17.7 };
+const data2011 = { '0-14': 15.2, '15-64': 67.1, '65+': 17.7 };
 
 // 2021 weighted national averages computed from zupanije.json
 // mladi_0_14: ~14.9%, stari_65+: ~17.7%, 15-64: remainder
 // Using hardcoded accurate national values from DZS Census 2021
-const data2021 = { '0–14': 14.5, '15–64': 64.3, '65+': 21.2 };
+const data2021 = { '0-14': 14.5, '15-64': 64.3, '65+': 21.2 };
 
-const ageGroups = ['0–14', '15–64', '65+'];
+const ageGroups = ['0-14', '15-64', '65+'];
 
 const data = {
   labels: ageGroups,

@@ -136,7 +136,7 @@ const options = {
 export default function TrendChart() {
   return (
     <div className={styles.chartCard}>
-      <h3 className={styles.chartTitle}>Stanovništvo Hrvatske (1953–2021)</h3>
+      <h3 className={styles.chartTitle}>Stanovništvo Hrvatske (1953-2021)</h3>
       <div className={styles.chartContainer}>
         <Line data={data} options={options} />
       </div>
